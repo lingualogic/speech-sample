@@ -1,0 +1,35 @@
+<div class="container">
+  <app-bot-editor name='Bot'></app-bot-editor>
+
+  <app-speak-editor [disableAudioFileName]=true></app-speak-editor>
+  <hr>
+
+  <div class="row">
+      <div class="col">
+        <app-show-button appAnimate="show"></app-show-button>
+      </div>
+  </div>
+  <hr>
+  <div class="row">
+      <div class="col-lg-11">
+          <div *ngIf="errorFlag" class="alert alert-warning" role="alert">
+            {{errorText}}
+          </div>
+
+          <div *ngIf="!errorFlag"class="alert alert-success" role="alert">
+            <li *ngFor="let message of messages">
+              {{message}}
+            </li>
+          </div>
+
+        </div>
+
+      <div *ngIf="!dialogButtonOn" class="col col-lg-1" id ="speakButton">
+        <button type="button" class="btn btn-outline-success " (click)="start()">Start</button>
+      </div>
+      <div *ngIf="dialogButtonOn" class="col col-lg-1" id ="stopButton">
+        <button type="button" class="btn btn-success"  (click)="stop()">Stop</button>
+      </div>
+  </div>
+</div>
+

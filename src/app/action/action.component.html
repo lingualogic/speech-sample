@@ -1,0 +1,75 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col">
+      <h3>Funktionalität der App</h3>
+      <p>Mit dem ActionService lässt sich die Funktionalität der App steuern. Hierzu muss ein Element und eine Action gewählt werden.<br>
+      Anschließend kann die Start- und Stopfunktion ausgeführt werden.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" >
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"
+                id="inputGroup-sizing-default">
+            Actionname:
+          </span>
+        </div>
+        <input [(ngModel)]="actionName"
+                type="text"
+                class="form-control"
+                placeholder="{{actionName}}"
+                (change)="setAction()"/>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col" >
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"
+                id="inputGroup-sizing-default">
+            Element:
+          </span>
+        </div>
+        <input [(ngModel)]="elementName"
+                type="text"
+                class="form-control"
+                placeholder="{{elementName}}"
+                (change)="setElement()"/>
+        </div>
+      </div>
+    </div>
+
+
+
+  <hr>
+
+  <div class="row">
+      <div class="col">
+        <app-show-button appAnimate="show"></app-show-button>
+      </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-11">
+        <div *ngIf="errorFlag" class="alert alert-warning" role="alert">
+          {{errorText}}
+        </div>
+
+        <div *ngIf="!errorFlag"class="alert alert-success" role="alert">
+          <li *ngFor="let message of messages">
+            {{message}}
+          </li>
+        </div>
+      </div>
+
+  <div *ngIf="!actionButtonOn" class="col col-lg-1 center" >
+    <button type="button" class="btn btn-outline-success " (click)="start()">Start</button>
+  </div>
+  <div *ngIf="actionButtonOn" class="col col-lg-1 center">
+    <button type="button" class="btn btn-success"  (click)="stop()">Stop</button>
+  </div>
+</div>

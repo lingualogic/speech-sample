@@ -1,0 +1,68 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col">
+        <h3>Spracherkennung </h3>
+        <p>Der Start Button startet die Spracherkennung. Die Spracheingabe wird automatisch bei Ende der Eingabe oder über den Stop Button beendet. <br> Über die Plustaste wird die Spracheingabe lokal gespeichert.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <form>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="listenInput" #listenPrompt placeholder="Hier steht, was gesagt wurde..." [(ngModel)]="listen" name="listen" />
+                        <div class="input-group-append">
+                            <button  type="button" class="btn btn-outline-success " (click)="add(listenPrompt.value); listenPrompt.value=''">+</button>
+                        </div>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div *ngIf="errorFlag" class="alert alert-warning" role="alert">
+          {{errorText}}
+        </div>
+      <div *ngIf="!errorFlag"class="alert alert-success" role="alert">
+          <li *ngFor="let message of messages">
+            {{message}}
+          </li>
+        </div>
+      </div>
+    <div class="col col-lg-1">
+        <div *ngIf="!listenButtonOn">
+            <button type="button" class="btn btn-outline-success" (click)="start()">Start</button>
+          </div>
+          <div *ngIf="listenButtonOn">
+              <button type="button" class="btn btn-outline-success" (click)="stop()">Stop</button>
+          </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+      <div class="col">
+          <h3>Lokal gespeicherte Spracheingaben </h3>
+          <p>Mit der Kreuztaste wird die lokal gespeicherte Spracheingabe gelöscht.</p>
+      </div>
+    </div>
+
+  <div class="row">
+
+      <div class="col">
+
+          <ul class="list-group pre-scrollable">
+              <li class="list-group-item" *ngFor="let listen of listens">{{listen.content}}
+                  <button style="position:relative; float:right;" type="button" class="btn btn-outline-danger" title="delete listen" (click)="delete(listen)">x</button>
+              </li>
+          </ul>
+
+      </div>
+  </div>
+
+
+</div>

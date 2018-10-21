@@ -1,0 +1,56 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col">
+        <h3>Sprachausgabe</h3>
+        <p>Gebt einen beliebigen Text ein und lasst ihn von einer Sprachsynthese ausgeben oder verwendet Audiodateien.</p>
+        <textarea [(ngModel)]="text" class="form-control" rows="15">{{text}}</textarea>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col col-lg-4">
+      <h4>Sprache:</h4>
+    </div>
+    <div class="col col-lg-3">
+      <div class="input-group">
+        <select [(ngModel)]="language" class="custom-select" id="languagePicker" aria-label="Example select with button addon">
+          <!-- <option selected>Sprache auswählen...</option> -->
+          <option value="de" selected>Deutsch</option>
+          <option value="en">English</option>
+
+        </select>
+        <div class="input-group-append">
+          <button class="btn btn-outline-dark" type="button" (click)="setLanguage()">Wählen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <app-speak-editor></app-speak-editor>
+  <hr>
+  <div class="row">
+      <div class="col-lg-11">
+        <div *ngIf="errorFlag" class="alert alert-warning" role="alert">
+          {{errorText}}
+        </div>
+
+        <div *ngIf="!errorFlag"class="alert alert-success" role="alert">
+          <li *ngFor="let message of messages">
+            {{message}}
+          </li>
+        </div>
+
+      </div>
+
+      <div *ngIf="!speakButtonOn" class="col col-lg-1">
+        <button type="button" class="btn btn-outline-success" (click)="start()">Start</button>
+      </div>
+      <div *ngIf="speakButtonOn" class="col col-lg-1">
+          <button type="button" class="btn btn-success"  (click)="stop()">Stop</button>
+      </div>
+
+  </div>
+
+
+  </div>
