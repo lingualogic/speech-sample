@@ -29,19 +29,7 @@ export class DialogComponent implements OnInit, OnDestroy {
     private botService: BotService) { }
 
   ngOnInit() {
-    if (this.checkLocalStorage) {
-      console.log('Local Storage avaliable.');
-      if  (!localStorage.getItem( 'dialog')) {
-        this.http.get('assets/speech/speech.def', {responseType: 'text'}).subscribe(data => {
-          console.log(data);
-          localStorage.setItem( 'dialog', data);
-          this.dialogText = data;
-        });
-      } else {
-        this.dialogText = localStorage.getItem( 'dialog');
-      }
-    }
-
+    this.loadDialog();
     this.dialogSpeakEvent = this.botService.speakEvent.subscribe(text => {
       const message = 'Speak: ' + text;
       // console.log(message);
@@ -80,6 +68,26 @@ export class DialogComponent implements OnInit, OnDestroy {
     this.botService.speak = false;
   }
 
+  ngOnDestroy(): void {
+    this.dialogSpeakEvent.unsubscribe();
+    this.dialogActionEvent.unsubscribe();
+    this.dialogStartEvent.unsubscribe();
+    this.dialogStopEvent.unsubscribe();
+    this.errorEvent.unsubscribe();
+    this.stop();
+  }
+
+  loadDialog(): void {
+    if (this.checkLocalStorage) {
+      console.log('Local Storage avaliable.');
+      if  (!localStorage.getItem( 'dialog')) {
+        this.resetDialog();
+      } else {
+        this.dialogText = localStorage.getItem( 'dialog');
+      }
+    }
+  }
+
   checkLocalStorage(): boolean {
     try {
       return 'localStorage' in window && window['localStorage'] !== null;
@@ -88,33 +96,45 @@ export class DialogComponent implements OnInit, OnDestroy {
     }
   }
 
+  resetDialog(): void {
+    this.http.get('assets/speech/speech.def', {responseType: 'text'}).subscribe(data => {
+      console.log(data);
+      localStorage.setItem( 'dialog', data);
+      localStorage.setItem( 'ChangeFlag', 'false' );
+      this.dialogText = data;
+    });
+  }
 
-  ngOnDestroy(): void {
-    this.dialogSpeakEvent.unsubscribe();
-    this.dialogActionEvent.unsubscribe();
-    this.dialogStartEvent.unsubscribe();
-    this.dialogStopEvent.unsubscribe();
-    this.errorEvent.unsubscribe();
-    // this.botService.setSpeakOn();
+  saveDialog(): void {
+    this.botService.parse(this.dialogText);
+    localStorage.setItem( 'dialog',  this.dialogText);
+    this.checkChanges();
+  }
+
+  checkChanges(): void {
+    let cache;
+    cache = localStorage.getItem( 'dialog');
+    console.log(cache);
+    let file;
+    this.http.get('assets/speech/speech.def', {responseType: 'text'}).subscribe(data => {
+      file  =  data;
+      if (cache === file) {
+        localStorage.setItem( 'ChangeFlag', 'false' );
+      } else {
+        localStorage.setItem( 'ChangeFlag', 'true' );
+      }
+    });
   }
 
   start(): void {
     this.errorFlag = false;
-    this.load();
+    // this.botService.parse(this.dialogText);
+    this.saveDialog();
     this.botService.start();
   }
 
   stop(): void {
     this.botService.stop();
-  }
-
-  save(): void {
-    this.load();
-    localStorage.setItem( 'dialog',  this.dialogText);
-  }
-
-  load(): void {
-    this.botService.parse(this.dialogText);
   }
 
 }

@@ -7,23 +7,6 @@
       Anschließend kann die Start- und Stopfunktion ausgeführt werden.</p>
     </div>
   </div>
-  <div class="row">
-    <div class="col" >
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text"
-                id="inputGroup-sizing-default">
-            Actionname:
-          </span>
-        </div>
-        <input [(ngModel)]="actionName"
-                type="text"
-                class="form-control"
-                placeholder="{{actionName}}"
-                (change)="setAction()"/>
-        </div>
-      </div>
-    </div>
 
   <div class="row">
     <div class="col" >
@@ -42,6 +25,27 @@
         </div>
       </div>
     </div>
+
+  <div class="row">
+    <div class="col" >
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"
+                id="inputGroup-sizing-default">
+            Actionname:
+          </span>
+        </div>
+        <select [(ngModel)]="actionName" class="custom-select" (change)="setAction()">
+          <option value="toggleHome" selected>toggleHome</option>
+          <option value="showHome">showHome</option>
+          <option value="hideHome">hideHome</option>
+          <option value="animate">animate</option>
+        </select>
+        </div>
+      </div>
+    </div>
+
+
 
 
 

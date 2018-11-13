@@ -1,26 +1,13 @@
-# Speech-Angular Release Notizen
+# Speech-Sample App Release Notizen
 
 
-## 0.5.1.0017 Alpha (03.10.2018)
-
-### Features
-
-* **listen-service:** ListenService für die Spracheingbe eingebaut
-* **plattform:** Cordova-Plattform für Android und iOS hinzugefügt
-
-
-## 0.5.0.0016 Alpha (21.09.2018)
+## 0.5.2.0002 Alpha (11.11.2018)
 
 ### Features
 
-* **bot-service:** isRunning()-Funktion eingebaut
-* **common:** Dokumentation um Grundlagen erweitert
+* **Plattform:** Cordova-Plattform für Android und iOS hinzugefügt
 
 
-## 0.5.0.0015 Alpha (15.09.2018)
+## 0.5.1.0001 Alpha (21.09.2018)
 
-### Features
-
-* **bot-service:** BotService eingebaut
-* **action-service:** ActionService eingebaut
-* **speak-service:** SpeakService eingebaut
+* **Allgemein:** Erste veröffentlichte Version der Speech-Sample App

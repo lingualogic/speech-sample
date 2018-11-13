@@ -30,11 +30,14 @@
             State:
           </span>
         </div>
-        <input [(ngModel)]="stateName"
-                type="text"
-                class="form-control"
-                placeholder="{{stateName}}"
-                (change)="setStateName()"/>
+        <select [(ngModel)]="stateName"
+                class="custom-select"
+                id="formatPicker"
+                (change)="setStateName()" >
+          <option value="home" selected>home</option>
+          <option value="demo">demo</option>
+          <option value="homebutton" selected>homebutton</option>
+        </select>
         </div>
       </div>
     </div>

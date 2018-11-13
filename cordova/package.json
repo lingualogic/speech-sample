@@ -1,0 +1,13 @@
+{
+    "name": "de.lingualogic.sampleapp",
+    "displayName": "Speech-SampleApp",
+    "version": "0.5.2",
+    "description": "Beispiel-App fuer Speech-Angular SDK",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "LinguaLogic Team",
+    "license": "MIT",
+    "dependencies": {}
+}

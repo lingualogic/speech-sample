@@ -69,7 +69,7 @@ export class AppModule {
     botServiceConfig.errorOutputFlag = false;
     botServiceConfig.dialogFilePath = 'assets/speech/';
     const speakServiceConfig = SpeakService.getConfig();
-    speakServiceConfig.audioFilePath = 'assets/speech/audio/';
+    speakServiceConfig.audioFilePath = 'assets/speech/audio/polly/';
     speakServiceConfig.errorOutputFlag = false;
     const listenServiceConfig = ListenService.getConfig();
     listenServiceConfig.errorOutputFlag = false;

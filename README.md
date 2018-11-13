@@ -6,7 +6,7 @@ Das Speech-Sample ist eine Beispielanwendung in [Angular 6](https://angular.io/)
 
 Wir haben Speech-Sample auf Mac OS X 10.11, Mac OS X 10.13 getestet. Als Plattformen können eingesetzt werden:
 
-- Mac OS X >= 10.9
+- Mac OS X >= 10.11
 - Windows >= 7
 - aktuelles Linux (z.B. Ubuntu 18.04)
 
@@ -29,8 +29,7 @@ Dieses Projekt wurde mit dem [Angular CLI](https://github.com/angular/angular-cl
 Bitte installieren, falls nicht vorhanden:
 
 	$ npm install -g @angular/cli
-
-
+	
 ## Installation
 
 Zuerst muss das Speech-Sample Github-Repsitory unter [https://github.com/lingualogic/speech-sample](https://github.com/lingualogic/speech-sample) mit folgendem Befehl geklont werden:
@@ -50,6 +49,10 @@ Das Beispiel kann mit `npm start` oder mit dem Angular CLI Befehl `ng serve` ges
 	$ ng serve --open
 	
 Anschließend kann es in Chrome unter `http://localhost:4200/` geöffnet werden.
+
+## Beispiel auf Android und iOS starten
+
+Seit Speech-Angular 0.5.2 sind die Sprachdienste auch auf Android (>= 5.1) und iOS (>= 10) verfügbar. Hierzu wird Cordova genutzt. Eine Anleitung hierzu finden sich unter [cordova/README.md](./cordova/README.md).
 
 ## Beispiel erweitern
 

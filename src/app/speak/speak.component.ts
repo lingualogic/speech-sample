@@ -20,6 +20,7 @@ export class SpeakComponent implements OnInit, OnDestroy {
   errorEvent: any;
 
   // view variable
+  audioOn: boolean;
   speakButtonOn = false;
   errorFlag = false;
   errorText: string;
@@ -54,9 +55,12 @@ export class SpeakComponent implements OnInit, OnDestroy {
     });
 
     this.errorEvent = this.speakService.errorEvent.subscribe( (error) => {
-      this.errorFlag = true;
-      this.errorText = 'Fehler: ' + error.message ;
-      this.ref.detectChanges();
+      // Catch known error in Android Cordova Plugin for demo
+      if (error.message !== 'TTSHtml5._getTTSVoice: keine Voice-Liste als Array vorhanden') {
+        this.errorFlag = true;
+        this.errorText = 'Fehler: ' + error.message ;
+        this.ref.detectChanges();
+      }
     });
   }
 
@@ -64,6 +68,11 @@ export class SpeakComponent implements OnInit, OnDestroy {
     this.speakStopEvent.unsubscribe();
     this.speakStartEvent.unsubscribe();
     this.errorEvent.unsubscribe();
+  }
+
+  onAudioOn(audioButtonOn: boolean) {
+    audioButtonOn ? this.audioOn = true : this.audioOn = false;
+    this.ref.detectChanges();
   }
 
   start(): void {

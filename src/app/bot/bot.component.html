@@ -1,7 +1,8 @@
 <div class="container">
   <app-bot-editor name='Bot'></app-bot-editor>
 
-  <app-speak-editor [disableAudioFileName]=true></app-speak-editor>
+  <app-speak-editor [disableAudioFileName]=true (audioOn)="onAudioOn($event)"></app-speak-editor>
+
   <hr>
 
   <div class="row">

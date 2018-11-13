@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SpeakService, BotService } from 'speech-angular';
 
 @Component({
@@ -9,6 +9,7 @@ import { SpeakService, BotService } from 'speech-angular';
 export class SpeakEditorComponent implements OnInit {
 
   @Input() disableAudioFileName = false;
+  @Output() audioOn = new EventEmitter<boolean>();
 
   audioButtonOn: boolean;
   audioFilePath: string;
@@ -24,7 +25,12 @@ export class SpeakEditorComponent implements OnInit {
     this.audioFilePath = this.speakService.path;
     this.audioFileFormat = this.speakService.format;
     this.audioFileName = 'HalloWelt';
+    this.setAudioOn();
 
+  }
+
+  setAudioOn() {
+    this.audioOn.emit(this.audioButtonOn);
   }
 
   toggleAudio(): void {
@@ -37,6 +43,7 @@ export class SpeakEditorComponent implements OnInit {
       this.speakService.audio = false;
       console.log(message);
     }
+    this.setAudioOn();
   }
 
   setAudioFilePath(): void {

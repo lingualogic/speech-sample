@@ -15,6 +15,7 @@ export class BotComponent implements OnInit, OnDestroy {
   dialogStopEvent: any;
   errorEvent: any;
 
+  audioOn: boolean;
   dialogButtonOn = false;
   errorFlag = false;
   errorText: string;
@@ -77,11 +78,24 @@ export class BotComponent implements OnInit, OnDestroy {
     this.errorEvent.unsubscribe();
 
     this.botService.speak = false;
+    this.stop();
+  }
+
+  onAudioOn(audioButtonOn: boolean) {
+    audioButtonOn ? this.audioOn = true : this.audioOn = false;
   }
 
   start(): void {
     this.errorFlag = false;
-    this.botService.start();
+    const changeFlag = localStorage.getItem( 'ChangeFlag');
+
+    if ( changeFlag === 'true' && this.audioOn) {
+      // tslint:disable-next-line:max-line-length
+      this.errorText = 'Der Dialog wurde geändert. Daher können keine Audiodateien mehr verwendet werden. Stellen Sie Audiodatein verwenden aus oder setzten Sie den Dialog zurück.';
+      this.errorFlag = true;
+    } else {
+      this.botService.start();
+    }
   }
 
   stop(): void {

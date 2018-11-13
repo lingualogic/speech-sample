@@ -3,19 +3,19 @@
       <div class="col">
         <div class="form-group">
           <h3>Dialog designen:</h3>
-          <textarea [(ngModel)]="dialogText" class="form-control" rows="13" (change)="save()">{{dialogText}}</textarea>
+          <textarea [(ngModel)]="dialogText" class="form-control" rows="13" (change)="saveDialog()">{{dialogText}}</textarea>
         </div>
       </div>
     </div>
-    <!-- <div class="row">
+    <div class="row">
       <div class="col col-lg-1" >
-        <button class="btn btn-dark" (click)="load()">Laden</button>
+        <button class="btn btn-dark" (click)="resetDialog()">Zurücksetzen</button>
       </div>
       <div class="col col-lg-9" > </div>
       <div class="col col-lg-1" >
-          <button class="btn btn-dark" (click)="save()">Speichern</button>
+          <button class="btn btn-dark" (click)="saveDialog()">Speichern & Laden</button>
       </div>
-    </div> -->
+    </div>
     <hr>
     <app-bot-editor name='Dialog'></app-bot-editor>
     <div class="row">

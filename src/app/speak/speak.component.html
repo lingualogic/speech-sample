@@ -4,7 +4,9 @@
     <div class="col">
         <h3>Sprachausgabe</h3>
         <p>Gebt einen beliebigen Text ein und lasst ihn von einer Sprachsynthese ausgeben oder verwendet Audiodateien.</p>
-        <textarea [(ngModel)]="text" class="form-control" rows="15">{{text}}</textarea>
+        <div *ngIf="!audioOn">
+          <textarea [(ngModel)]="text" class="form-control" rows="15">{{text}}</textarea>
+        </div>
     </div>
   </div>
   <br>
@@ -27,7 +29,7 @@
     </div>
   </div>
   <br>
-  <app-speak-editor></app-speak-editor>
+  <app-speak-editor (audioOn)="onAudioOn($event)" ></app-speak-editor>
   <hr>
   <div class="row">
       <div class="col-lg-11">
