@@ -1,0 +1,53 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col">
+        <h3>Sprachanalyse </h3>
+        <p>Der Start Button startet die Sprachanalyse.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4">
+      <h4>Sprache:</h4>
+    </div>
+    <div class="col col-lg-3">
+      <div class="input-group">
+        <select [(ngModel)]="language" class="custom-select" id="languagePicker" aria-label="Example select with button addon">
+          <!-- <option selected>Sprache auswählen...</option> -->
+          <option value="de" selected>Deutsch</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <form>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" [(ngModel)]="intentText" name="intent"/>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+        <div *ngIf="errorFlag" class="alert alert-warning" role="alert">
+          {{errorText}}
+        </div>
+        <div *ngIf="!errorFlag"class="alert alert-success" role="alert">
+            {{intentName}}
+        </div>
+    </div>
+    <div class="col col-lg-1">
+        <button type="button" class="btn btn-outline-success" (click)="start()">Start</button>
+    </div>
+  </div>
+  <hr>
+
+</div>

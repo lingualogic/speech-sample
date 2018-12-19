@@ -55,4 +55,5 @@ const settings = {
 
 // Gulp-Skripte
 
+require('./gulp/gulp-install')(settings);
 require('./gulp/gulp-cordova')(settings);

@@ -1,6 +1,27 @@
 <div class="container">
   <app-bot-editor name='Bot'></app-bot-editor>
 
+  <div class="row">
+    <div class="col col-lg-4">
+        <h4>Stimme ändern:</h4>
+      </div>
+      <div class="col col-lg-2">
+        <label class="switch">
+          <input type="checkbox"
+                 [(ngModel)]="voiceButtonOn"
+                 (change)="toggleVoice()">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    <div class="col col-lg-1" >
+          <!-- <p>{{voiceButtonOn}}</p> -->
+        </div>
+  </div>
+  <div *ngIf="voiceButtonOn">
+    <app-voice-editor></app-voice-editor>
+  </div>
+
+
   <app-speak-editor [disableAudioFileName]=true (audioOn)="onAudioOn($event)"></app-speak-editor>
 
   <hr>

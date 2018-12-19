@@ -17,6 +17,7 @@ export class BotComponent implements OnInit, OnDestroy {
 
   audioOn: boolean;
   dialogButtonOn = false;
+  voiceButtonOn = false;
   errorFlag = false;
   errorText: string;
 
@@ -86,6 +87,10 @@ export class BotComponent implements OnInit, OnDestroy {
 
   onAudioOn(audioButtonOn: boolean) {
     audioButtonOn ? this.audioOn = true : this.audioOn = false;
+  }
+
+  toggleVoice(): void {
+    this.voiceButtonOn ? this.voiceButtonOn  = true : this.voiceButtonOn  = false;
   }
 
   start(): void {

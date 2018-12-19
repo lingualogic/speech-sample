@@ -9,10 +9,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InfoComponent } from './info/info.component';
 import { SpeakComponent } from './speak/speak.component';
 import { ListenComponent } from './listen/listen.component';
+import { IntentComponent } from './intent/intent.component';
 import { ActionComponent } from './action/action.component';
 import { DesignerComponent } from './designer/designer.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { SpeakEditorComponent } from './speak-editor/speak-editor.component';
+import { VoiceEditorComponent } from './voice-editor/voice-editor.component';
 import { ShowButtonComponent } from './show-button/show-button.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { BotComponent } from './bot/bot.component';
@@ -28,10 +30,12 @@ describe('AppComponent', () => {
         InfoComponent,
         SpeakComponent,
         ListenComponent,
+        IntentComponent,
         ActionComponent,
         DesignerComponent,
         PlaygroundComponent,
         SpeakEditorComponent,
+        VoiceEditorComponent,
         ShowButtonComponent,
         DialogComponent,
         BotComponent,

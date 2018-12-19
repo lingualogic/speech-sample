@@ -25,7 +25,6 @@ export class SpeakComponent implements OnInit, OnDestroy {
   errorFlag = false;
   errorText: string;
   text: string;
-  language: string;
   messages = [];
 
   constructor(
@@ -35,7 +34,6 @@ export class SpeakComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.text = 'Geben Sie ein, was gesagt  werden soll...';
-    this.language = this.speakService.language;
 
     this.speakStartEvent = this.speakService.startEvent.subscribe( () => {
       this.messages = [];
@@ -84,11 +82,6 @@ export class SpeakComponent implements OnInit, OnDestroy {
 
   stop(): void {
     this.speakService.stop();
-  }
-
-  setLanguage(): void {
-    this.speakService.language = this.language;
-    console.log('Set Language to ' + this.language + '.');
   }
 
 }

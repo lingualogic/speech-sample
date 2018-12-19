@@ -11,10 +11,12 @@ import { InfoComponent } from './../info/info.component';
 import { SpeakComponent } from './../speak/speak.component';
 import { ListenComponent } from './../listen/listen.component';
 import { ActionComponent } from './../action/action.component';
+import { IntentComponent } from './../intent/intent.component';
 import { PlaygroundComponent } from './../playground/playground.component';
 import { BotComponent } from './../bot/bot.component';
 import { BotEditorComponent } from './../bot-editor/bot-editor.component';
 import { SpeakEditorComponent } from './../speak-editor/speak-editor.component';
+import { VoiceEditorComponent } from './../voice-editor/voice-editor.component';
 import { ShowButtonComponent } from './../show-button/show-button.component';
 
 describe('DesignerComponent', () => {
@@ -29,11 +31,13 @@ describe('DesignerComponent', () => {
         InfoComponent,
         SpeakComponent,
         ListenComponent,
+        IntentComponent,
         ActionComponent,
         PlaygroundComponent,
         BotComponent,
         BotEditorComponent,
         SpeakEditorComponent,
+        VoiceEditorComponent,
         ShowButtonComponent
       ],
       imports: [

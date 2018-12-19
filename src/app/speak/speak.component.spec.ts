@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { SpeakComponent } from './speak.component';
 
 import { SpeakEditorComponent } from './../speak-editor/speak-editor.component';
+import { VoiceEditorComponent } from './../voice-editor/voice-editor.component';
 
 
 describe('SpeakComponent', () => {
@@ -13,7 +14,8 @@ describe('SpeakComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         SpeakComponent,
-        SpeakEditorComponent
+        SpeakEditorComponent,
+        VoiceEditorComponent
       ],
       imports: [
         FormsModule

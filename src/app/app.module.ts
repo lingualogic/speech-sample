@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ListenComponent } from './listen/listen.component';
+import { IntentComponent } from './intent/intent.component';
 import { SpeakComponent } from './speak/speak.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -22,18 +23,23 @@ import { PlaygroundComponent } from './playground/playground.component';
 import { DesignerComponent } from './designer/designer.component';
 import { DialogComponent } from './dialog/dialog.component';
 
-import { SpeakService, ActionService, ListenService, BotService } from 'speech-angular';
-
 import { BotEditorComponent } from './bot-editor/bot-editor.component';
 import { SpeakEditorComponent } from './speak-editor/speak-editor.component';
 import { InfoComponent } from './info/info.component';
 import { ActionComponent } from './action/action.component';
+
+// speech-angular
+
+import { SpeakService, ActionService, ListenService, IntentService, BotService } from 'speech-angular';
+import { VoiceEditorComponent } from './voice-editor/voice-editor.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListenComponent,
+    IntentComponent,
     SpeakComponent,
     FooterComponent,
     AnimateDirective,
@@ -45,7 +51,8 @@ import { ActionComponent } from './action/action.component';
     BotEditorComponent,
     SpeakEditorComponent,
     InfoComponent,
-    ActionComponent
+    ActionComponent,
+    VoiceEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +64,7 @@ import { ActionComponent } from './action/action.component';
     SpeakService,
     ActionService,
     ListenService,
+    IntentService,
     BotService
   ],
   bootstrap: [AppComponent]
@@ -65,13 +73,15 @@ export class AppModule {
   title: 'Speech Sample';
 
   constructor() {
-    const botServiceConfig = BotService.getConfig();
-    botServiceConfig.errorOutputFlag = false;
-    botServiceConfig.dialogFilePath = 'assets/speech/';
     const speakServiceConfig = SpeakService.getConfig();
     speakServiceConfig.audioFilePath = 'assets/speech/audio/polly/';
     speakServiceConfig.errorOutputFlag = false;
     const listenServiceConfig = ListenService.getConfig();
     listenServiceConfig.errorOutputFlag = false;
+    const intentServiceConfig = IntentService.getConfig();
+    intentServiceConfig.errorOutputFlag = false;
+    const botServiceConfig = BotService.getConfig();
+    botServiceConfig.errorOutputFlag = false;
+    botServiceConfig.dialogFilePath = 'assets/speech/';
   }
 }

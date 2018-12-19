@@ -6,28 +6,12 @@
         <p>Gebt einen beliebigen Text ein und lasst ihn von einer Sprachsynthese ausgeben oder verwendet Audiodateien.</p>
         <div *ngIf="!audioOn">
           <textarea [(ngModel)]="text" class="form-control" rows="15">{{text}}</textarea>
+          <br>
+          <app-voice-editor></app-voice-editor>
         </div>
     </div>
   </div>
-  <br>
-  <div class="row">
-    <div class="col col-lg-4">
-      <h4>Sprache:</h4>
-    </div>
-    <div class="col col-lg-3">
-      <div class="input-group">
-        <select [(ngModel)]="language" class="custom-select" id="languagePicker" aria-label="Example select with button addon">
-          <!-- <option selected>Sprache auswählen...</option> -->
-          <option value="de" selected>Deutsch</option>
-          <option value="en">English</option>
 
-        </select>
-        <div class="input-group-append">
-          <button class="btn btn-outline-dark" type="button" (click)="setLanguage()">Wählen</button>
-        </div>
-      </div>
-    </div>
-  </div>
   <br>
   <app-speak-editor (audioOn)="onAudioOn($event)" ></app-speak-editor>
   <hr>

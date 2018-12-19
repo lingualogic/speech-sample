@@ -126,6 +126,8 @@ module.exports = ({ gulp, exec, distDir, appDir, cordovaRootDir, cordovaAppDir, 
     });
 
 
+    // Cordova-App ausfuehren
+
     gulp.task('cordova-run-browser', (done) => {
         exec(`cd ${cordovaAppDir} && cordova run browser --debug`, done);
     });

@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.3.0003 Alpha (17.12.2018)
+
+### Features
+
+* **Intent:** Intent hinzugefügt
+
+
 ## 0.5.2.0002 Alpha (11.11.2018)
 
 ### Features

@@ -1,7 +1,7 @@
 {
     "name": "de.lingualogic.sampleapp",
     "displayName": "Speech-SampleApp",
-    "version": "0.5.2",
+    "version": "0.5.3",
     "description": "Beispiel-App fuer Speech-Angular SDK",
     "main": "index.js",
     "scripts": {

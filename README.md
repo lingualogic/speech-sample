@@ -52,7 +52,7 @@ Anschließend kann es in Chrome unter `http://localhost:4200/` geöffnet werden.
 
 ## Beispiel auf Android und iOS starten
 
-Seit Speech-Angular 0.5.2 sind die Sprachdienste auch auf Android (>= 5.1) und iOS (>= 10) verfügbar. Hierzu wird Cordova genutzt. Eine Anleitung hierzu finden sich unter [cordova/README.md](./cordova/README.md).
+Seit Speech-Angular 0.5.3 sind die Sprachdienste auch auf Android (>= 5.1) und iOS (>= 10) verfügbar. Hierzu wird Cordova genutzt. Eine Anleitung hierzu finden sich unter [cordova/README.md](./cordova/README.md).
 
 ## Beispiel erweitern
 
