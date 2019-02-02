@@ -1,6 +1,6 @@
 # Speech-Sample
 
-Das Speech-Sample ist eine Beispielanwendung in [Angular 6](https://angular.io/), die das [Speech-Angular](https://github.com/lingualogic/speech-angular) SDK nutzt, um die Webapp mit Sprachdiensten zu erweitern. Daraus entsteht ein sog. Voice User Infaces - VUI. Dieses ist beispielhaft implemeniert, kann allerdings beliebig geändert und erweitert werden, um so eigene VUI Szenarien zu entwicklen und zu testen.
+Das Speech-Sample ist eine Beispielanwendung in [Angular](https://angular.io/), die das [Speech-Angular](https://github.com/lingualogic/speech-angular) SDK nutzt, um die Webapp mit Sprachdiensten zu erweitern. Daraus entsteht ein sog. Voice User Infaces - VUI. Dieses ist beispielhaft implemeniert, kann allerdings beliebig geändert und erweitert werden, um so eigene VUI Szenarien zu entwicklen und zu testen.
 
 ## Voraussetzungen
 
