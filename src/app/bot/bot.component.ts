@@ -89,10 +89,6 @@ export class BotComponent implements OnInit, OnDestroy {
     audioButtonOn ? this.audioOn = true : this.audioOn = false;
   }
 
-  toggleVoice(): void {
-    this.voiceButtonOn ? this.voiceButtonOn  = true : this.voiceButtonOn  = false;
-  }
-
   start(): void {
     this.errorFlag = false;
     const changeFlag = localStorage.getItem( 'ChangeFlag');

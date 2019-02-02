@@ -3,7 +3,16 @@
   <div class="row">
     <div class="col">
         <h3>Sprachanalyse </h3>
-        <p>Der Start Button startet die Sprachanalyse.</p>
+       <p> Der Start Button startet die Spracherkennung und Sprachanalyse.
+           Mit dem Stop Button kann die Spracherkennung gestoppt werden.
+           <i>Optional</i> kann der Text direkt eingegeben werden und an das Sprachmodell gesendet werden.</p>
+    </div>
+
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <p>Zunächst muss die Sprache des hinterlegten Sprachanalysemodells gewählt werden. </p>
     </div>
   </div>
   <div class="row">
@@ -13,7 +22,6 @@
     <div class="col col-lg-3">
       <div class="input-group">
         <select [(ngModel)]="language" class="custom-select" id="languagePicker" aria-label="Example select with button addon">
-          <!-- <option selected>Sprache auswählen...</option> -->
           <option value="de" selected>Deutsch</option>
           <option value="en">English</option>
         </select>
@@ -27,7 +35,7 @@
             <li class="list-group-item">
                 <form>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" [(ngModel)]="intentText" name="intent"/>
+                        <input type="text" class="form-control" [(ngModel)]="intentText" name="intent" placeholder="Hier steht, die Sprach- oder Texteingabe ..."/>
                     </div>
                 </form>
             </li>
@@ -41,11 +49,23 @@
           {{errorText}}
         </div>
         <div *ngIf="!errorFlag"class="alert alert-success" role="alert">
-            {{intentName}}
+            <li *ngFor="let message of messages">
+                {{message}}
+              </li>
         </div>
     </div>
-    <div class="col col-lg-1">
-        <button type="button" class="btn btn-outline-success" (click)="start()">Start</button>
+    <div *ngIf="!intentText">
+      <div class="col col-lg-1">
+        <div *ngIf="!intentButtonOn">
+            <button type="button" class="btn btn-outline-success" (click)="start()">Start</button>
+          </div>
+          <div *ngIf="intentButtonOn">
+              <button type="button" class="btn btn-outline-success" (click)="stop()">Stop</button>
+          </div>
+      </div>
+    </div>
+    <div *ngIf="intentText">
+      <button type="button" class="btn btn-outline-success" (click)="start()">Senden</button>
     </div>
   </div>
   <hr>

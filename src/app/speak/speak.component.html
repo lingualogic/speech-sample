@@ -6,14 +6,21 @@
         <p>Gebt einen beliebigen Text ein und lasst ihn von einer Sprachsynthese ausgeben oder verwendet Audiodateien.</p>
         <div *ngIf="!audioOn">
           <textarea [(ngModel)]="text" class="form-control" rows="15">{{text}}</textarea>
-          <br>
-          <app-voice-editor></app-voice-editor>
         </div>
+        <br>
     </div>
   </div>
 
-  <br>
-  <app-speak-editor (audioOn)="onAudioOn($event)" ></app-speak-editor>
+  <div class="row">
+    <div class="col col-lg-6" *ngIf="!audioOn">
+      <app-voice-editor [disableVoiceSelection]=true ></app-voice-editor>
+    </div>
+
+    <div class="col col-lg-6">
+      <app-speak-editor [disableAudioFileName]=true (audioOn)="onAudioOn($event)"></app-speak-editor>
+    </div>
+  </div>
+
   <hr>
   <div class="row">
       <div class="col-lg-11">

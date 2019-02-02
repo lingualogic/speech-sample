@@ -1,53 +1,70 @@
+<div class="container">
+
 <div class="row">
-  <div class="col col-lg-5" >
-      <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text"
-                  id="inputGroup-sizing-default">
-              TTS:
-            </span>
-          </div>
-        <select [(ngModel)]="tts"
-                class="custom-select"
-                (change)="setTTS()" >
-          <option value="TTSHtml5" selected>Html5</option>
-          <option value="TTSNuance">Nuance</option>
-        </select>
+    <div class="col col-lg-8">
+        <h4>Stimme ändern:</h4>
       </div>
-    </div>
-</div>
-<div class="row">
-  <div class="col col-lg-5" >
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-            <span class="input-group-text"
-                  id="inputGroup-sizing-default">
-              Sprache:
-            </span>
-      </div>
-        <select [(ngModel)]="language"
-                class="custom-select"
-                (change)="setLanguage()" >
-          <option value="de" selected>Deutsch</option>
-          <option value="en">English</option>
-        </select>
+      <div class="col col-lg-2">
+        <label class="switch">
+          <input type="checkbox"
+                  [(ngModel)]="voiceButtonOn"
+                  (change)="toggleVoice()">
+          <span class="slider round"></span>
+        </label>
     </div>
   </div>
-</div>
-<div class="row">
-    <div class="col col-lg-5" >
+<div *ngIf="voiceButtonOn">
+  <div class="row">
+    <div class="col col-lg-10" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                    id="inputGroup-sizing-default">
+                TTS:
+              </span>
+            </div>
+          <select [(ngModel)]="tts"
+                  class="custom-select"
+                  (change)="setTTS()" >
+            <option value="TTSHtml5" selected>Html5</option>
+            <option value="TTSNuance">Nuance</option>
+          </select>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-10" >
       <div class="input-group mb-3">
         <div class="input-group-prepend">
               <span class="input-group-text"
                     id="inputGroup-sizing-default">
-                Stimme:
+                Sprache:
               </span>
         </div>
-          <select [(ngModel)]="voice"
+          <select [(ngModel)]="language"
                   class="custom-select"
-                  (change)="setVoice()" >
-            <option *ngFor="let voice of voiceList" [value]="voice">{{voice}}</option>
+                  (change)="setLanguage()" >
+            <option value="de" selected>Deutsch</option>
+            <option value="en">English</option>
           </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col col-lg-10" >
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+                <span class="input-group-text"
+                      id="inputGroup-sizing-default">
+                  Stimme:
+                </span>
+          </div>
+            <select [(ngModel)]="voice"
+                    class="custom-select"
+                    (change)="setVoice()" >
+              <option *ngFor="let voice of voiceList" [value]="voice">{{voice}}</option>
+            </select>
+      </div>
     </div>
   </div>
 </div>

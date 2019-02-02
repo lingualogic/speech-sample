@@ -52,9 +52,10 @@ export class SpeakComponent implements OnInit, OnDestroy {
       this.ref.detectChanges();
     });
 
-    this.errorEvent = this.speakService.errorEvent.subscribe( (error) => {
+    this.errorEvent = this.speakService.errorEvent.subscribe((error: any) => {
+      console.log('SpeakComponent: errorEvent = ', error);
       // Catch known error in Android Cordova Plugin for demo
-      if (error.message !== 'TTSHtml5._getTTSVoice: keine Voice-Liste als Array vorhanden') {
+      if (error && error.message !== 'TTSHtml5._getTTSVoice: keine Voice-Liste als Array vorhanden') {
         this.errorFlag = true;
         this.errorText = 'Fehler: ' + error.message ;
         this.ref.detectChanges();

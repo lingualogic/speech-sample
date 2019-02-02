@@ -6,24 +6,29 @@ Das Speech-Sample ist eine Beispielanwendung in [Angular 6](https://angular.io/)
 
 Wir haben Speech-Sample auf Mac OS X 10.11, Mac OS X 10.13 getestet. Als Plattformen können eingesetzt werden:
 
-- Mac OS X >= 10.11
-- Windows >= 7
-- aktuelles Linux (z.B. Ubuntu 18.04)
+* Mac OS X >= 10.11
+* Windows >= 7
+* aktuelles Linux (z.B. Ubuntu 18.04)
 
-Als Browser sollte standardmäßig Chrome ab Version 65 genutzt werden. Wir empfehlen, Speech-Sample nur unter Chrome einzusetzen.
 
-- Chrome >= 65 (dringend empfohlen)
+Es wird die aktuellste Angular-Version empfohlen
 
-Grundsätzlich ist Speech-Angular auch in Firefox, Opera, Safari und Edge nutzbar, allerdings hängt die Sprachausgabe unter diesen Browsern von der zugrunde liegenden Text-to-Speech Engine der jeweiligen Plattformen ab. Die Spracheingabe funktioniert ausschließlich in Chrome und mit Internetverbindung. 
+* Angular >= 7.2
 
-- Firefox >= 60 (mit Einschränkungen, nur Sprachausgabe)
-- Opera >= 55 (mit Einschränkungen, nur Sprachausgabe)
-- Safari >= 11 (mit Einschränkungen, nur Sprachausgabe)
-- Edge >= 42 (mit Einschränkungen, nur Sprachausgabe)
+
+Grundsätzlich ist das Speech-Framework in Chrome, Firefox, Opera, Safari und Edge nutzbar, allerdings hängt die Sprachausgabe unter diesen Browsern von der zugrunde liegenden Text-to-Speech Engine der jeweiligen Plattformen ab. Die Spracheingabe funktioniert bisher nur in Chrome ohne die Nutzung von Nuance. Mit Nuance kann die Spracheingabe in allen hier aufgeführten Browsern verwendet werden.
+
+* Chrome >= 71   Windows/Linux/MacOS (Html5: TTS, ASR)(Nuance: TTS, ASR, NLU)
+* Firefox >= 64  Windows/Linux/MacOS (Html5: TTS)(Nuance: TTS, ASR, NLU) 
+* Opera >= 58    Windows/MacOS (Html5: TTS)(Nuance: TTS, ASR, NLU) Linux (kein Html5)
+* Safari >= 12   MacOS/iOS (Html5: TTS)(Nuance: ASR, NLU) 
+* Edge >= 42     Windows (Html5: TTS)(Nuance: TTS, ASR, NLU)
+
+Will man den Nuance-Clouddienst verwenden, muss ein eigener Nuance-Mix Account eingerichtet werden und die Nuance-Komponente des Speech-Frameworks separat in die eigene App eingebunden werden.
 
 NodeJS muss installiert sein.
 
-- NodeJS >= 8.9
+- NodeJS >= 10.X (LTS-Version)
 
 Dieses Projekt wurde mit dem [Angular CLI](https://github.com/angular/angular-cli) generiert.
 Bitte installieren, falls nicht vorhanden:

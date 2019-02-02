@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.4.0004 Alpha (29.01.2019)
+
+### Features
+
+* **Listen:** Nuance-ASR hinzugefügt
+
+
 ## 0.5.3.0003 Alpha (17.12.2018)
 
 ### Features

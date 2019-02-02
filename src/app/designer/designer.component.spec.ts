@@ -10,6 +10,7 @@ import { DialogComponent } from './../dialog/dialog.component';
 import { InfoComponent } from './../info/info.component';
 import { SpeakComponent } from './../speak/speak.component';
 import { ListenComponent } from './../listen/listen.component';
+import { ListenEditorComponent } from './../listen-editor/listen-editor.component';
 import { ActionComponent } from './../action/action.component';
 import { IntentComponent } from './../intent/intent.component';
 import { PlaygroundComponent } from './../playground/playground.component';
@@ -31,6 +32,7 @@ describe('DesignerComponent', () => {
         InfoComponent,
         SpeakComponent,
         ListenComponent,
+        ListenEditorComponent,
         IntentComponent,
         ActionComponent,
         PlaygroundComponent,

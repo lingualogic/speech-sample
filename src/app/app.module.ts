@@ -32,6 +32,7 @@ import { ActionComponent } from './action/action.component';
 
 import { SpeakService, ActionService, ListenService, IntentService, BotService } from 'speech-angular';
 import { VoiceEditorComponent } from './voice-editor/voice-editor.component';
+import { ListenEditorComponent } from './listen-editor/listen-editor.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { VoiceEditorComponent } from './voice-editor/voice-editor.component';
     SpeakEditorComponent,
     InfoComponent,
     ActionComponent,
-    VoiceEditorComponent
+    VoiceEditorComponent,
+    ListenEditorComponent
   ],
   imports: [
     BrowserModule,

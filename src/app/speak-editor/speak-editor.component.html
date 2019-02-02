@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col col-lg-4">
+  <div class="col col-lg-8">
       <h4>Audiodateien verwenden:</h4>
     </div>
-  <div class="col col-lg-2" >
+  <div class="col col-lg-4" >
       <label class="switch">
         <input type="checkbox"
                [(ngModel)]="audioButtonOn"
@@ -16,10 +16,9 @@
       </div>
 </div>
 
-
 <div *ngIf="audioButtonOn">
   <div class="row">
-    <div class="col col-lg-5" >
+    <div class="col col-lg-10" >
       <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text"
@@ -37,7 +36,7 @@
   </div>
 
   <div class="row" *ngIf="!disableAudioFileName">
-    <div class="col col-lg-5" >
+    <div class="col col-lg-10" >
       <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text"
@@ -54,23 +53,8 @@
     </div>
   </div>
 
-  <div class="row" *ngIf="disableAudioFileName">
-    <!-- <div class="col col-lg-3" ></div>
-    <div class="col col-lg-5" >
-      <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text"
-                  id="inputGroup-sizing-default">
-                  Name: hier kommt ein text rein 1,3,5
-            </span>
-          </div>
-
-        </div>
-    </div> -->
-  </div>
-
   <div class="row">
-  <div class="col col-lg-5" >
+  <div class="col col-lg-10" >
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text"

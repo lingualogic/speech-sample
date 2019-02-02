@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar.component';
 import { InfoComponent } from './../info/info.component';
 import { SpeakComponent } from './../speak/speak.component';
 import { ListenComponent } from './../listen/listen.component';
+import { ListenEditorComponent } from './../listen-editor/listen-editor.component';
 import { IntentComponent } from './../intent/intent.component';
 import { ActionComponent } from './../action/action.component';
 import { DesignerComponent } from './../designer/designer.component';
@@ -30,6 +31,7 @@ describe('NavbarComponent', () => {
         InfoComponent,
         SpeakComponent,
         ListenComponent,
+        ListenEditorComponent,
         IntentComponent,
         ActionComponent,
         DesignerComponent,

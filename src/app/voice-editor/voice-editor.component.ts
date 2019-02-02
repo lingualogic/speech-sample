@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input, Output, EventEmitter } from '@angular/core';
 import { SpeakService } from 'speech-angular';
 
 @Component({
@@ -8,6 +8,10 @@ import { SpeakService } from 'speech-angular';
 })
 export class VoiceEditorComponent implements OnInit {
 
+  @Input() disableVoiceSelection = false;
+  @Output() voiceOn = new EventEmitter<boolean>();
+
+  voiceButtonOn = false;
   language: string;
   tts: string;
   voice: string;
@@ -45,6 +49,10 @@ export class VoiceEditorComponent implements OnInit {
   setVoice(): void {
     this.speakService.voice = this.voice;
     console.log('Set Voice to ' + this.voice + '.');
+  }
+
+  toggleVoice(): void {
+    this.voiceButtonOn ? this.voiceButtonOn  = true : this.voiceButtonOn  = false;
   }
 
 }
