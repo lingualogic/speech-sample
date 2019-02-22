@@ -15,7 +15,7 @@ export class BotComponent implements OnInit, OnDestroy {
   dialogStopEvent: any;
   errorEvent: any;
 
-  audioOn: boolean;
+  audioOn = false;
   dialogButtonOn = false;
   voiceButtonOn = false;
   errorFlag = false;
@@ -87,6 +87,7 @@ export class BotComponent implements OnInit, OnDestroy {
 
   onAudioOn(audioButtonOn: boolean) {
     audioButtonOn ? this.audioOn = true : this.audioOn = false;
+    this.ref.detectChanges();
   }
 
   start(): void {

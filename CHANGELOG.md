@@ -1,6 +1,14 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.5.0005 Alpha (22.02.2019)
+
+### Features
+
+* **Speech-Framework:** auf Version 0.5.5 des Speech-Frameworks aktualisiert
+* **Speech-Angular:** auf Version 0.5.5 von Speech-Angular aktualisiert 
+
+
 ## 0.5.4.0004 Alpha (29.01.2019)
 
 ### Features
