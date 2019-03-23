@@ -13,19 +13,22 @@ import { NuanceModule } from 'speech-angular';
 // Nuance-Credentials
 
 // TODO: Hier muessen die echten Zugangsdaten eingetragen werden
-import { APP_ID, APP_KEY, NLU_TAG } from './config/nuance-credentials';
-// import { APP_ID, APP_KEY, NLU_TAG } from './config/nuance-credentials.default';
+import { APP_ID, APP_KEY, NLU_TAG } from './../credentials/nuance-credentials';
 const nuanceOption = {
+  nuanceDynamicCredentialsFlag: true,
   nuanceAppId: APP_ID,
   nuanceAppKey: APP_KEY,
-  nuanceNluTag: NLU_TAG
+  nuanceNluTag: NLU_TAG,
+  errorOutputFlag: false
 };
 
 
 // Initialisierung des Nuance Cloud-Service
 
 NuanceModule.init( nuanceOption, (aNuanceFlag: boolean) => {
-  console.log( '===> Nuance:', aNuanceFlag);
+  if ( nuanceOption && nuanceOption.errorOutputFlag ) {
+    console.log( '===> Nuance:', aNuanceFlag);
+  }
 
   if (environment.production) {
     enableProdMode();

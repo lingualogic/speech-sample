@@ -1,0 +1,147 @@
+/*
+ * Help CSS-Classes for animation in HelpDirective
+ */
+
+@import 'variables';
+@import 'mixins';
+$help-focus: #C100FF;
+$help-focus-border: darken($help-focus, 10);
+$time: 1s;
+$count: 5;
+$scroll-count: 10;
+
+
+/* animation functions */
+
+@mixin blinkTransform($initialColor, $blinkColor) {
+    animation: blinkNowTransform $time;
+    animation-iteration-count: $count;
+
+    @keyframes blinkNowTransform {
+        50% {
+            transform: scaleY(1.2) scaleX(1.2);
+            background-color: $blinkColor;
+        }
+    }
+}
+
+@mixin blinkWithBorder($initialColor, $blinkColor, $borderColor) {
+    animation: blinkNowBorder $time;
+    animation-iteration-count: $count;
+
+    i[class*="icon icon-*"] {
+        color: $foreground;
+    }
+
+    @keyframes blinkNowBorder {
+        50% {
+            transform: scaleY(1.2) scaleX(1.2);
+            background-color: $blinkColor;
+            border-color: $borderColor;
+        }
+    }
+}
+
+/* no Transformation */
+
+@mixin blink($initialColor, $blinkColor) {
+  animation: blinkNow $time;
+  animation-iteration-count: $count;
+
+  @keyframes blinkNow {
+      50% {
+          background-color: $blinkColor;
+      }
+  }
+}
+
+
+/* Help-Classes for Buttons, Container and Lists */
+
+.help-focus-button .button {
+    @include blinkWithBorder($foreground, $help-focus, $help-focus-border);
+}
+
+.help-focus-container {
+    @include blink($foreground, $help-focus);
+}
+
+.help-focus-contextmenu {
+    uni-context-menu {
+      @include blink($foreground, $help-focus);
+    }
+}
+
+
+.help-focus-list {
+    uni-vertical-card,
+    uni-horizontal-card {
+        uni-round-button {
+            .button {
+                @include blinkWithBorder($foreground, $help-focus, $help-focus-border);
+            }
+        }
+    }
+}
+
+
+/* Srollable */
+
+/* Bounce animation for the arrow in the scrollable area */
+
+@mixin scrollableBounce() {
+  animation: bounce $time;
+  animation-iteration-count: $scroll-count;
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(50);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+  }
+}
+
+@mixin scrollableHoricontalBounce() {
+  animation: bounce-horizontal $time;
+  animation-iteration-count: $scroll-count;
+
+  @keyframes bounce-horizontal {
+    0%, 100% {
+      transform: translateX(50px) rotate(90deg);
+    }
+    50% {
+      transform: translateX(-50px) rotate(90deg);
+    }
+  }
+}
+
+
+.help-focus-scrollarea {
+  position:absolute;
+  height:100%;
+  left:0;
+  margin:auto;
+  top:0;
+  width:100%;
+  z-index: 1000;
+
+	.help-focus-arrow {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -137px;
+		margin-left: -38px;
+		height: 275px;
+		width: 75px;
+		background-image: url("/assets/img/arrows/arrow-help-scroll.png");
+
+		@include scrollableBounce();
+
+		&.horizontal {
+			@include scrollableHoricontalBounce();
+		}
+	}
+}
+

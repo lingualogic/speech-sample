@@ -1,10 +1,12 @@
 const gulp = require('gulp');
 const path = require('path');
 const childProcess = require('child_process');
+const shell = require('gulp-shell');
 
 // Verzeichnis-Konstanten
 
 const rootDir = path.resolve(__dirname);
+const credentialsDir = 'credentials';
 const srcDir = 'src';
 const appDir = 'app';
 const testDir = 'e2e';
@@ -38,18 +40,19 @@ const settings = {
 	gulp,
 	exec,
 	rootDir,
-  distDir,
-  srcDir,
-  appDir,
-  testDir,
+	credentialsDir,
+	distDir,
+	srcDir,
+	appDir,
+	testDir,
 	assetsDir,
-  buildDir,
-  cordovaDir,
-  cordovaRootDir,
-  cordovaAppDir,
-  cordovaWwwDir,
-  electronDir,
-  electronWwwDir,
+	buildDir,
+	cordovaDir,
+	cordovaRootDir,
+	cordovaAppDir,
+	cordovaWwwDir,
+	electronDir,
+	electronWwwDir,
 };
 
 
@@ -57,3 +60,34 @@ const settings = {
 
 require('./gulp/gulp-install')(settings);
 require('./gulp/gulp-cordova')(settings);
+require('./gulp/gulp-electron')(settings);
+
+
+// Gulp-Tasks
+
+
+/**
+ * Installiert Electron NPM-Package
+ */
+
+gulp.task('install-electron', shell.task('npm install --save-dev electron'));
+
+
+/**
+ * Installiert Cordova-NPM-Package
+ */
+
+gulp.task('install-cordova-npm', shell.task('npm install --save-dev cordova'));
+
+
+/**
+ * Erzeugt das oeffentliche Speech-Framework
+ */
+
+gulp.task('install-cordova', function(callback) {
+	runSequence(
+		install-cordova-npm,
+		cordova-install,
+		callback);
+});
+  

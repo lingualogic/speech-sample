@@ -1,7 +1,7 @@
 {
     "name": "de.lingualogic.sampleapp",
     "displayName": "Speech-SampleApp",
-    "version": "0.5.4",
+    "version": "0.5.5",
     "description": "Beispiel-App fuer Speech-Angular SDK",
     "author": "LinguaLogic Team",
     "license": "MIT",

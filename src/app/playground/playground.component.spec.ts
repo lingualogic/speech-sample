@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { AppRoutingModule } from './../app-routing.module';
+import { HelpModule, HelpService } from './../help/help.module';
 
 import { PlaygroundComponent } from './playground.component';
 import { NavbarComponent } from './../navbar/navbar.component';
@@ -19,6 +20,9 @@ import { ShowButtonComponent } from './../show-button/show-button.component';
 import { DialogComponent } from './../dialog/dialog.component';
 import { BotComponent } from './../bot/bot.component';
 import { BotEditorComponent } from './../bot-editor/bot-editor.component';
+import { NuanceComponent } from './../nuance/nuance.component';
+import { IntentEditorComponent } from './../intent-editor/intent-editor.component';
+
 
 describe('PlaygroundComponent', () => {
   let component: PlaygroundComponent;
@@ -41,13 +45,16 @@ describe('PlaygroundComponent', () => {
         ShowButtonComponent,
         DialogComponent,
         BotComponent,
-        BotEditorComponent
+        BotEditorComponent,
+        NuanceComponent,
+        IntentEditorComponent
       ],
       imports: [
+        RouterTestingModule,
         FormsModule,
-        AppRoutingModule
+        HelpModule
       ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
+      providers: [ HelpService, {provide: APP_BASE_HREF, useValue : '/' }]
     })
     .compileComponents();
   }));

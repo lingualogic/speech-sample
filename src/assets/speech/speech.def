@@ -25,3 +25,10 @@ DIALOG main
             SPEAK 3, Die Hometaste ist bereits eingeblendet.
             ACTION animate, Button, show
             SPEAK 4, Klicken Sie hier - um sie auszublenden.
+
+
+DIALOG helpSample
+
+    STATE sampleInfo
+            ACTION setFocus, NavLink, home
+            SPEAK 5, Mit Beenden in der Menüleiste gelangen sie immer zur Hauptseite zurück.

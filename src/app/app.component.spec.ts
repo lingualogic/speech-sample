@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { HelpModule, HelpService } from './help/help.module';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { InfoComponent } from './info/info.component';
 import { SpeakComponent } from './speak/speak.component';
@@ -20,6 +22,9 @@ import { ShowButtonComponent } from './show-button/show-button.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { BotComponent } from './bot/bot.component';
 import { BotEditorComponent } from './bot-editor/bot-editor.component';
+import { NuanceComponent } from './nuance/nuance.component';
+import { IntentEditorComponent } from './intent-editor/intent-editor.component';
+
 
 describe('AppComponent', () => {
 
@@ -41,13 +46,16 @@ describe('AppComponent', () => {
         ShowButtonComponent,
         DialogComponent,
         BotComponent,
-        BotEditorComponent
+        BotEditorComponent,
+        NuanceComponent,
+        IntentEditorComponent
       ],
       imports: [
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HelpModule
       ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
+      providers: [ HelpService, {provide: APP_BASE_HREF, useValue : '/' }]
     }).compileComponents();
   }));
 

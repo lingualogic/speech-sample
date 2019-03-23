@@ -1,0 +1,10 @@
+{
+  "name": "speech-sample",
+  "version": "0.5.5",
+  "productName": "SpeechSampleApp",
+  "displayName": "Speech-SampleApp",
+  "description": "Beispiel-App fuer Speech-Angular SDK",
+  "author": "LinguaLogic Team",
+  "license": "MIT",
+  "main": "main.js"
+}

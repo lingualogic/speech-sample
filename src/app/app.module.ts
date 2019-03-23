@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import { HelpModule } from './help/help.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -30,9 +30,12 @@ import { ActionComponent } from './action/action.component';
 
 // speech-angular
 
-import { SpeakService, ActionService, ListenService, IntentService, BotService } from 'speech-angular';
+import { SpeakService, ActionService, ListenService, IntentService, BotService, NuanceService } from 'speech-angular';
 import { VoiceEditorComponent } from './voice-editor/voice-editor.component';
 import { ListenEditorComponent } from './listen-editor/listen-editor.component';
+import { CloudComponent } from './cloud/cloud.component';
+import { NuanceComponent } from './nuance/nuance.component';
+import { IntentEditorComponent } from './intent-editor/intent-editor.component';
 
 
 @NgModule({
@@ -54,20 +57,25 @@ import { ListenEditorComponent } from './listen-editor/listen-editor.component';
     InfoComponent,
     ActionComponent,
     VoiceEditorComponent,
-    ListenEditorComponent
+    ListenEditorComponent,
+    CloudComponent,
+    NuanceComponent,
+    IntentEditorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HelpModule.forRoot()
   ],
   providers: [
     SpeakService,
     ActionService,
     ListenService,
     IntentService,
-    BotService
+    BotService,
+    NuanceService
   ],
   bootstrap: [AppComponent]
 })

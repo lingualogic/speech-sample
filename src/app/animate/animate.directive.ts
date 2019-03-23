@@ -60,7 +60,7 @@ export class AnimateDirective implements OnInit, OnDestroy {
    */
 ngOnDestroy() {
     // remove Functions for Actions
-    console.log('animateDirective: ngOnDestroy:', this.speechName);
+    // console.log('animateDirective: ngOnDestroy:', this.speechName);
     this.actionService.removeElement(this.speechName);
 }
 

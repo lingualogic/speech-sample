@@ -1,6 +1,14 @@
 # Speech-Sample
 
-Das Speech-Sample ist eine Beispielanwendung in [Angular](https://angular.io/), die das [Speech-Angular](https://github.com/lingualogic/speech-angular) SDK nutzt, um die Webapp mit Sprachdiensten zu erweitern. Daraus entsteht ein sog. Voice User Infaces - VUI. Dieses ist beispielhaft implemeniert, kann allerdings beliebig geändert und erweitert werden, um so eigene VUI Szenarien zu entwicklen und zu testen.
+Das Speech-Sample ist eine Beispielanwendung in [Angular](https://angular.io/), die das [Speech-Angular](https://github.com/lingualogic/speech-angular) SDK nutzt, um die Web-App mit Sprachdiensten zu erweitern. Daraus entsteht ein sog. Voice User Infaces - VUI. Dieses ist beispielhaft implemeniert, kann allerdings beliebig geändert und erweitert werden, um so eigene VUI Szenarien zu entwicklen und zu testen.
+
+
+## Letzte Version
+
+* 0.5.6.0006 Alpha vom 21.03.2019 [Release Notizen](./CHANGELOG.md)
+
+Speech-Angular ist noch in einem frühen Entwicklungsstadium und sollte noch nicht für den produktiven Einsatz verwendet werden.
+
 
 ## Voraussetzungen
 
@@ -55,9 +63,56 @@ Das Beispiel kann mit `npm start` oder mit dem Angular CLI Befehl `ng serve` ges
 	
 Anschließend kann es in Chrome unter `http://localhost:4200/` geöffnet werden.
 
+
 ## Beispiel auf Android und iOS starten
 
-Seit Speech-Angular 0.5.3 sind die Sprachdienste auch auf Android (>= 5.1) und iOS (>= 10) verfügbar. Hierzu wird Cordova genutzt. Eine Anleitung hierzu finden sich unter [cordova/README.md](./cordova/README.md).
+Seit Speech-Angular 0.5.3 sind die Sprachdienste auch auf Android (>= 5.1) und iOS (>= 10) verfügbar. Hierzu wird Cordova genutzt. Eine Anleitung finden sich unter [cordova-app/README.md](./cordova-app/README.md).
+
+
+Falls cordova noch nicht installiert ist, muss nur einmalig aufgerufen werden:
+
+    $ npm run install:cordova
+
+damit werden die Browser-Plattform und die Android-Plattform für Cordova installiert. Das Android-SDK muss vorher installiert sein.
+
+Für die iOS Installation von Cordova muss folgender Befehl nach dem oben beschriebenen install:cordova ausgeführt werden:
+
+    $npm run install:cordova:ios
+
+Die Cordova Sample-App für den Browser wird mit folgenden Befehl erzeugt: 
+    
+	$ npm run cordova
+
+für Android:
+
+    $ npm run cordova:android
+
+und für iOS:
+
+    $ npm run cordova:ios
+
+meistens wird die iOS-Version nicht vollständig erzeugt, sondern bricht mit einer Fehlermeldung ab.
+In diesem Fall ruft man XCode auf und öffnet das Sample-App iOS-Projekt in XCode, um die App zu erzeugen.
+
+
+## Beispiel Anwendung starten
+
+Seit Speech-Angular 0.5.6 ist es möglich eine Desktop Anwendung zu erzeugen. Hierzu wird Electron genutzt. Eine Anleitung finden sich unter [electron-app/README.md](./electron-app/README.md).
+
+Falls electron noch nicht installiert ist, muss nur einmalig aufgerufen werden:
+
+    $ npm run install:electron
+
+dann starten der Electron Sample-App mit folgendem Befehl: 
+    
+	$ npm run electron
+
+Erzeugen einer eigenstaendigen Electron Sample-App:
+
+    $ npm run build:electron
+
+Danach ist die Electron Sample-App im Unterverzeichnis electron-app/app/SpeechSampleApp-XXX zu finden.
+
 
 ## Beispiel erweitern
 
@@ -65,11 +120,13 @@ Sprachaus- und eingaben können einzeln erweitert werden.
 
 Das beispielhafte VUI Szenario greift auf die Funktionalität des Show-Buttons zurück und erklärt mit Hilfe des Bots, wo sich die Hometaste bei einem Tablet befindet. Zur Entwicklung eines eigenen Szenarios können an dieser Stelle weitere Komponenten entwickelt und über Sprache steuerbar gemacht werden.
 
+
 ## Feedback und Fragen 
 
 Für Feedback und Fragen steht das LinguaLogic Team zur Verfügung: 
 
 Ansprechpartner: **Leo Füchsel** (leo@lingualogic.de)
+
 
 ## Lizenz
 

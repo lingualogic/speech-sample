@@ -44,7 +44,7 @@ export class ListenComponent implements OnInit, OnDestroy {
     // this.errorText = 'Error: AudioPlayer._decodeAudio: DOMException';
 
     if (this.checkLocalStorage) {
-      console.log('Storage avaliable.');
+      // console.log('Storage avaliable.');
       if  (!localStorage.getItem( 'listens')) {
         localStorage.setItem( 'listens', JSON.stringify(LISTENS));
       }

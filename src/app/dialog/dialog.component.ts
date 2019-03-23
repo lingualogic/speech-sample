@@ -79,7 +79,7 @@ export class DialogComponent implements OnInit, OnDestroy {
 
   loadDialog(): void {
     if (this.checkLocalStorage) {
-      console.log('Local Storage avaliable.');
+      // console.log('Local Storage avaliable.');
       if  (!localStorage.getItem( 'dialog')) {
         this.resetDialog();
       } else {
@@ -98,7 +98,7 @@ export class DialogComponent implements OnInit, OnDestroy {
 
   resetDialog(): void {
     this.http.get('assets/speech/speech.def', {responseType: 'text'}).subscribe(data => {
-      console.log(data);
+      // console.log(data);
       localStorage.setItem( 'dialog', data);
       localStorage.setItem( 'ChangeFlag', 'false' );
       this.dialogText = data;
@@ -114,7 +114,7 @@ export class DialogComponent implements OnInit, OnDestroy {
   checkChanges(): void {
     let cache;
     cache = localStorage.getItem( 'dialog');
-    console.log(cache);
+    // console.log(cache);
     let file;
     this.http.get('assets/speech/speech.def', {responseType: 'text'}).subscribe(data => {
       file  =  data;

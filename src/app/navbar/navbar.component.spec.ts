@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { AppRoutingModule } from './../app-routing.module';
+import { HelpModule, HelpService } from './../help/help.module';
 
 import { NavbarComponent } from './navbar.component';
 import { InfoComponent } from './../info/info.component';
@@ -19,46 +20,53 @@ import { ShowButtonComponent } from './../show-button/show-button.component';
 import { DialogComponent } from './../dialog/dialog.component';
 import { BotComponent } from './../bot/bot.component';
 import { BotEditorComponent } from './../bot-editor/bot-editor.component';
+import { NuanceComponent } from './../nuance/nuance.component';
+import { IntentEditorComponent } from './../intent-editor/intent-editor.component';
+
 
 describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+    let component: NavbarComponent;
+    let fixture: ComponentFixture<NavbarComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        NavbarComponent,
-        InfoComponent,
-        SpeakComponent,
-        ListenComponent,
-        ListenEditorComponent,
-        IntentComponent,
-        ActionComponent,
-        DesignerComponent,
-        PlaygroundComponent,
-        SpeakEditorComponent,
-        VoiceEditorComponent,
-        ShowButtonComponent,
-        DialogComponent,
-        BotComponent,
-        BotEditorComponent
-      ],
-      imports: [
-        FormsModule,
-        AppRoutingModule
-      ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                NavbarComponent,
+                InfoComponent,
+                SpeakComponent,
+                ListenComponent,
+                ListenEditorComponent,
+                IntentComponent,
+                ActionComponent,
+                DesignerComponent,
+                PlaygroundComponent,
+                SpeakEditorComponent,
+                VoiceEditorComponent,
+                ShowButtonComponent,
+                DialogComponent,
+                BotComponent,
+                BotEditorComponent,
+                NuanceComponent,
+                IntentEditorComponent
+            ],
+            imports: [
+                RouterTestingModule,
+                FormsModule,
+                HelpModule
+            ],
+            providers: [ HelpService, {provide: APP_BASE_HREF, useValue : '/' }]
+        })
+        .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(NavbarComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+
 });

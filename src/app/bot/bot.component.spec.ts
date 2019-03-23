@@ -7,6 +7,7 @@ import { SpeakEditorComponent } from './../speak-editor/speak-editor.component';
 import { VoiceEditorComponent } from './../voice-editor/voice-editor.component';
 import { ShowButtonComponent } from './../show-button/show-button.component';
 
+
 describe('BotComponent', () => {
   let component: BotComponent;
   let fixture: ComponentFixture<BotComponent>;

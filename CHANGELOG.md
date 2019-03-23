@@ -1,6 +1,14 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.6.0006 Alpha (21.03.2019)
+
+### Features
+
+* **Nuance:** Einbau der Nuance-Credentials für Nuance-Mix Cloud-Dienst
+* **Electron:** Electron-Version der Speech-Sample App integriert
+
+
 ## 0.5.5.0005 Alpha (22.02.2019)
 
 ### Features

@@ -9,6 +9,9 @@ import { ActionComponent } from './action/action.component';
 import { DesignerComponent } from './designer/designer.component';
 import { PlaygroundComponent } from './playground/playground.component';
 
+import { CloudComponent} from './cloud/cloud.component';
+import { NuanceComponent} from './nuance/nuance.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/info', pathMatch: 'full' },
@@ -19,7 +22,9 @@ const routes: Routes = [
   { path: 'action', component: ActionComponent },
   { path: 'bot', component: DesignerComponent },
   { path: 'designer', component: DesignerComponent },
-  { path: 'playground', component: PlaygroundComponent }
+  { path: 'playground', component: PlaygroundComponent },
+  { path: 'cloud', component: NuanceComponent },
+  { path: 'nuance', component: NuanceComponent }
 ];
 
 

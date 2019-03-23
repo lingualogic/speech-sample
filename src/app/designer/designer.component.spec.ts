@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import {APP_BASE_HREF} from '@angular/common';
 
-import { AppRoutingModule } from './../app-routing.module';
+import { HelpModule, HelpService } from './../help/help.module';
 
 import { DesignerComponent } from './designer.component';
 import { DialogComponent } from './../dialog/dialog.component';
@@ -19,6 +20,10 @@ import { BotEditorComponent } from './../bot-editor/bot-editor.component';
 import { SpeakEditorComponent } from './../speak-editor/speak-editor.component';
 import { VoiceEditorComponent } from './../voice-editor/voice-editor.component';
 import { ShowButtonComponent } from './../show-button/show-button.component';
+import { NuanceComponent } from './../nuance/nuance.component';
+import { NavbarComponent } from './../navbar/navbar.component';
+import { IntentEditorComponent } from './../intent-editor/intent-editor.component';
+
 
 describe('DesignerComponent', () => {
   let component: DesignerComponent;
@@ -40,14 +45,18 @@ describe('DesignerComponent', () => {
         BotEditorComponent,
         SpeakEditorComponent,
         VoiceEditorComponent,
-        ShowButtonComponent
+        ShowButtonComponent,
+        NuanceComponent,
+        NavbarComponent,
+        IntentEditorComponent
       ],
       imports: [
+        RouterTestingModule,
         HttpClientTestingModule,
         FormsModule,
-        AppRoutingModule
+        HelpModule
       ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
+      providers: [ HelpService, {provide: APP_BASE_HREF, useValue : '/' }]
     })
     .compileComponents();
   }));

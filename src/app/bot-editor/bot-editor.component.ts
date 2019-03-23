@@ -26,8 +26,8 @@ export class BotEditorComponent implements OnInit, OnDestroy {
     this.stateName = this.botService.state;
 
     this.parseEvent = this.botService.parseEvent.subscribe(() => {
-      const message = 'Dialog parsed.';
-      console.log(message);
+      // const message = 'Dialog parsed.';
+      // console.log(message);
       // this.messages.push(message);
       this.setStateName();
       // this.ref.detectChanges();
@@ -48,12 +48,12 @@ export class BotEditorComponent implements OnInit, OnDestroy {
   }
 
   setStateName(): void {
-    console.log('Set State...');
+    // console.log('Set State...');
     this.botService.state = this.stateName;
   }
 
   setDialogName(): void {
-    console.log('Set Dialog...');
+    // console.log('Set Dialog...');
     this.botService.dialog = this.dialogName;
   }
 

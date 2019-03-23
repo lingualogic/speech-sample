@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col col-lg-5" >
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+                  id="inputGroup-sizing-default">
+              NLU:
+            </span>
+          </div>
+        <select [(ngModel)]="nlu"
+                class="custom-select"
+                (change)="setNLU()" >
+          <option value="NLUNuance">Nuance</option>
+        </select>
+      </div>
+    </div>
+    <div class="col" >
+      <p> Bisher steht nur die Nuance NLU zur Verfügung.</p>
+    </div>
+</div>
+<div class="row">
+  <div class="col col-lg-5" >
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+            <span class="input-group-text"
+                  id="inputGroup-sizing-default">
+              Sprache:
+            </span>
+      </div>
+        <select [(ngModel)]="language"
+                class="custom-select"
+                (change)="setLanguage()" >
+          <option value="de" selected>Deutsch</option>
+          <option value="en">English</option>
+        </select>
+    </div>
+  </div>
+  <div *ngIf="nlu =='NLUNuance'" class="col" >
+    <p> <b>Hinweis:</b> Die Auswahl der Sprache hängt bei Verwendung der Nuance ASR von dem hinterlegten Nuance Mix Model ab.</p>
+  </div>
+</div>
