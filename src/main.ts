@@ -30,6 +30,8 @@ NuanceModule.init( nuanceOption, (aNuanceFlag: boolean) => {
     console.log( '===> Nuance:', aNuanceFlag);
   }
 
+  environment.nuance = aNuanceFlag;
+
   if (environment.production) {
     enableProdMode();
   }

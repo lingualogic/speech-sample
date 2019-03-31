@@ -6,6 +6,7 @@ import { Component, OnInit, OnDestroy, ChangeDetectorRef, Input } from '@angular
 
 import { IntentService } from 'speech-angular';
 import { Intent } from './intent';
+import { Concept } from './concept';
 
 
 @Component({
@@ -31,6 +32,10 @@ export class IntentComponent implements OnInit, OnDestroy {
   intentName = '';
   intentConfidence = 0;
 
+  concept: Concept;
+  conceptFlag = false;
+  conceptList: Array<Concept> = [];
+
   intentButtonOn = false;
   messages = [];
 
@@ -47,6 +52,13 @@ export class IntentComponent implements OnInit, OnDestroy {
       this.intentText = aIntentResult.literal;
       this.intentConfidence = aIntentResult.confidence;
       const message = 'Gefundener Intent: ' + this.intentName + ' (Confidence: ' + this.intentConfidence + ')';
+
+      if ( this.intent.conceptList.length > 0 ) {
+        this.conceptFlag = true;
+        this.conceptList = this.intent.conceptList;
+        this.concept = this.intent.conceptList[0];
+
+      }
       console.log(this.intent);
       this.messages.push(message);
       this.ref.detectChanges();
@@ -86,12 +98,23 @@ export class IntentComponent implements OnInit, OnDestroy {
   start(): void {
     console.log( 'Analysetext: ', this.intentText);
     this.errorFlag = false;
+    this.conceptFlag = false;
     this.intentService.text = this.intentText;
     this.intentService.start();
   }
 
   stop(): void {
     this.intentService.stop();
+  }
+
+  setConcept(literal: string): void {
+    for (const concept of this.conceptList) {
+      if (concept.literal === literal) {
+        this.concept = concept;
+        break;
+      }
+    }
+    this.ref.detectChanges();
   }
 
 }

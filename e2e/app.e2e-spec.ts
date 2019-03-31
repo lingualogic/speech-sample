@@ -9,6 +9,6 @@ describe('speech-sample App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Eine Webapp erweitert um Sprachdienste');
+    expect(page.getParagraphText()).toEqual('Eine Website oder Web-App erweitert um Sprachdienste');
   });
 });

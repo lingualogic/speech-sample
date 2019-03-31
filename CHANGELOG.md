@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.7.0007 Alpha (31.03.2019)
+
+### Features
+
+* **Intent:** Einbau der Intent-Konzepte
+
+
 ## 0.5.6.0006 Alpha (21.03.2019)
 
 ### Features

@@ -1,9 +1,14 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+// Feature-Module
+
 import { HelpModule } from './help/help.module';
+
+// Components
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -28,70 +33,94 @@ import { SpeakEditorComponent } from './speak-editor/speak-editor.component';
 import { InfoComponent } from './info/info.component';
 import { ActionComponent } from './action/action.component';
 
-// speech-angular
-
-import { SpeakService, ActionService, ListenService, IntentService, BotService, NuanceService } from 'speech-angular';
 import { VoiceEditorComponent } from './voice-editor/voice-editor.component';
 import { ListenEditorComponent } from './listen-editor/listen-editor.component';
 import { CloudComponent } from './cloud/cloud.component';
 import { NuanceComponent } from './nuance/nuance.component';
 import { IntentEditorComponent } from './intent-editor/intent-editor.component';
 
+// speech-angular
+
+import { SpeakService, ActionService, ListenService, IntentService, BotService, NuanceService } from 'speech-angular';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    ListenComponent,
-    IntentComponent,
-    SpeakComponent,
-    FooterComponent,
-    AnimateDirective,
-    ShowButtonComponent,
-    BotComponent,
-    PlaygroundComponent,
-    DesignerComponent,
-    DialogComponent,
-    BotEditorComponent,
-    SpeakEditorComponent,
-    InfoComponent,
-    ActionComponent,
-    VoiceEditorComponent,
-    ListenEditorComponent,
-    CloudComponent,
-    NuanceComponent,
-    IntentEditorComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    HelpModule.forRoot()
-  ],
-  providers: [
-    SpeakService,
-    ActionService,
-    ListenService,
-    IntentService,
-    BotService,
-    NuanceService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        ListenComponent,
+        IntentComponent,
+        SpeakComponent,
+        FooterComponent,
+        AnimateDirective,
+        ShowButtonComponent,
+        BotComponent,
+        PlaygroundComponent,
+        DesignerComponent,
+        DialogComponent,
+        BotEditorComponent,
+        SpeakEditorComponent,
+        InfoComponent,
+        ActionComponent,
+        VoiceEditorComponent,
+        ListenEditorComponent,
+        CloudComponent,
+        NuanceComponent,
+        IntentEditorComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        HelpModule.forRoot()
+    ],
+    providers: [
+        SpeakService,
+        ActionService,
+        ListenService,
+        IntentService,
+        BotService,
+        NuanceService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
-  title: 'Speech Sample';
+    title: 'Speech Sample';
 
-  constructor() {
-    const speakServiceConfig = SpeakService.getConfig();
-    speakServiceConfig.audioFilePath = 'assets/speech/audio/polly/';
-    speakServiceConfig.errorOutputFlag = false;
-    const listenServiceConfig = ListenService.getConfig();
-    listenServiceConfig.errorOutputFlag = false;
-    const intentServiceConfig = IntentService.getConfig();
-    intentServiceConfig.errorOutputFlag = false;
-    const botServiceConfig = BotService.getConfig();
-    botServiceConfig.errorOutputFlag = false;
-    botServiceConfig.dialogFilePath = 'assets/speech/';
+    constructor() {
+        const speakServiceConfig = SpeakService.getConfig();
+        speakServiceConfig.audioFilePath = 'assets/speech/audio/polly/';
+        speakServiceConfig.errorOutputFlag = false;
+        const listenServiceConfig = ListenService.getConfig();
+        listenServiceConfig.errorOutputFlag = false;
+        const intentServiceConfig = IntentService.getConfig();
+        intentServiceConfig.errorOutputFlag = false;
+        const botServiceConfig = BotService.getConfig();
+        botServiceConfig.errorOutputFlag = false;
+        botServiceConfig.dialogFilePath = 'assets/speech/';
+    }
+}
+
+
+/**
+ * Dient als Klasse fuer SubApps in der WebSite
+ */
+
+@NgModule({})
+export class SampleSharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: AppModule,
+      providers: [
+        SpeakService,
+        ActionService,
+        ListenService,
+        IntentService,
+        BotService,
+        NuanceService
+      ]
+    };
   }
 }
+
