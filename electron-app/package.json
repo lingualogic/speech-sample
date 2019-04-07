@@ -1,6 +1,6 @@
 {
   "name": "speech-sample",
-  "version": "0.5.5",
+  "version": "0.5.8",
   "productName": "SpeechSampleApp",
   "displayName": "Speech-SampleApp",
   "description": "Beispiel-App fuer Speech-Angular SDK",

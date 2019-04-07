@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.8.0008 Alpha (07.04.2019)
+
+### Features
+
+* **Amazon:** Einbau der Amazon-Credentials für Amazon Polly
+
+
 ## 0.5.7.0007 Alpha (31.03.2019)
 
 ### Features

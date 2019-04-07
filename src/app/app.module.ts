@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,11 +37,16 @@ import { VoiceEditorComponent } from './voice-editor/voice-editor.component';
 import { ListenEditorComponent } from './listen-editor/listen-editor.component';
 import { CloudComponent } from './cloud/cloud.component';
 import { NuanceComponent } from './nuance/nuance.component';
+import { AmazonComponent } from './amazon/amazon.component';
 import { IntentEditorComponent } from './intent-editor/intent-editor.component';
 
 // speech-angular
 
-import { SpeakService, ActionService, ListenService, IntentService, BotService, NuanceService } from 'speech-angular';
+import { SpeakService, ActionService, ListenService, IntentService, BotService, NuanceService, AmazonService } from 'speech-angular';
+
+
+const localeID = 'de';
+// const localeID = 'en';
 
 
 @NgModule({
@@ -66,6 +71,7 @@ import { SpeakService, ActionService, ListenService, IntentService, BotService, 
         ListenEditorComponent,
         CloudComponent,
         NuanceComponent,
+        AmazonComponent,
         IntentEditorComponent
     ],
     imports: [
@@ -76,12 +82,14 @@ import { SpeakService, ActionService, ListenService, IntentService, BotService, 
         HelpModule.forRoot()
     ],
     providers: [
+        { provide: LOCALE_ID, useValue: localeID },
         SpeakService,
         ActionService,
         ListenService,
         IntentService,
         BotService,
-        NuanceService
+        NuanceService,
+        AmazonService
     ],
     bootstrap: [AppComponent]
 })
@@ -91,7 +99,7 @@ export class AppModule {
     constructor() {
         const speakServiceConfig = SpeakService.getConfig();
         speakServiceConfig.audioFilePath = 'assets/speech/audio/polly/';
-        speakServiceConfig.errorOutputFlag = false;
+        speakServiceConfig.errorOutputFlag = true;
         const listenServiceConfig = ListenService.getConfig();
         listenServiceConfig.errorOutputFlag = false;
         const intentServiceConfig = IntentService.getConfig();
@@ -109,18 +117,20 @@ export class AppModule {
 
 @NgModule({})
 export class SampleSharedModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: AppModule,
-      providers: [
-        SpeakService,
-        ActionService,
-        ListenService,
-        IntentService,
-        BotService,
-        NuanceService
-      ]
-    };
-  }
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: AppModule,
+            providers: [
+                { provide: LOCALE_ID, useValue: localeID },
+                SpeakService,
+                ActionService,
+                ListenService,
+                IntentService,
+                BotService,
+                NuanceService,
+                AmazonService
+            ]
+        };
+    }
 }
 

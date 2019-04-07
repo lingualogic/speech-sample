@@ -49,8 +49,7 @@ Thumbs.db
 .angulardoc.json
 package-lock.json
 
-# Konfigurationsdateien
+# Credentials
 
-nuance.json
 nuance-credentials*
-!nuance-credentials.default*
+amazon-credentials*

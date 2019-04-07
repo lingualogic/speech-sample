@@ -2,11 +2,11 @@
  * Listen-Komponente
  */
 
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, Input, LOCALE_ID, Inject } from '@angular/core';
 
 import { Listen } from '../listen';
 
-import { LISTENS } from '../mock-listens';
+// import { LISTENS } from '../mock-listens';
 
 import { ListenService } from 'speech-angular';
 
@@ -37,22 +37,28 @@ export class ListenComponent implements OnInit, OnDestroy {
 
   constructor(
     private ref: ChangeDetectorRef,
+    @Inject(LOCALE_ID) private localeId: string,
     private listenService: ListenService
   ) { }
 
   ngOnInit(): void {
     // this.errorText = 'Error: AudioPlayer._decodeAudio: DOMException';
 
-    if (this.checkLocalStorage) {
-      // console.log('Storage avaliable.');
-      if  (!localStorage.getItem( 'listens')) {
-        localStorage.setItem( 'listens', JSON.stringify(LISTENS));
-      }
-      this.getListens();
-    }
+    // if (this.checkLocalStorage) {
+    //   // console.log('Storage avaliable.');
+    //   if  (!localStorage.getItem( 'listens')) {
+    //     localStorage.setItem( 'listens', JSON.stringify(LISTENS));
+    //   }
+    //   this.getListens();
+    // }
 
     this.listenResult = this.listenService.resultEvent.subscribe(aText => {
-      const message = 'Eingabe: ' + aText;
+      let message: string;
+      if (this.localeId === 'en') {
+        message = 'voice input: ' + aText;
+      } else {
+        message = 'Eingabe: ' + aText;
+      }
       this.setListen(aText);
       console.log(message);
       // this.messages.push(message)
@@ -61,7 +67,12 @@ export class ListenComponent implements OnInit, OnDestroy {
 
     this.listenStartEvent = this.listenService.startEvent.subscribe( () => {
       this.messages = [];
-      const message = 'Spracherkennung startet';
+      let message: string;
+      if (this.localeId === 'en') {
+        message = 'speech recognition starts';
+      } else {
+        message = 'Spracherkennung startet';
+      }
       this.listenButtonOn = true;
       console.log(message);
       this.messages.push(message);
@@ -69,7 +80,12 @@ export class ListenComponent implements OnInit, OnDestroy {
     });
 
     this.listenStopEvent = this.listenService.stopEvent.subscribe( () => {
-      const message = 'Spracherkennung stoppt';
+      let message: string;
+      if (this.localeId === 'en') {
+        message = 'speech recognition stops';
+      } else {
+        message = 'Spracherkennung stoppt';
+      }
       this.listenButtonOn = false;
       console.log(message);
       this.messages.push(message);
@@ -78,18 +94,18 @@ export class ListenComponent implements OnInit, OnDestroy {
 
     this.errorEvent = this.listenService.errorEvent.subscribe( (error) => {
       this.errorFlag = true;
-      this.errorText = 'Fehler: ' + error.message ;
+      this.errorText = 'Error: ' + error.message ;
       this.ref.detectChanges();
     });
   }
 
-  checkLocalStorage(): boolean {
-    try {
-      return 'localStorage' in window && window['localStorage'] !== null;
-    } catch (e) {
-      return false;
-    }
-  }
+  // checkLocalStorage(): boolean {
+  //   try {
+  //     return 'localStorage' in window && window['localStorage'] !== null;
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // }
 
   ngOnDestroy(): void {
     this.listenResult.unsubscribe();
@@ -103,29 +119,29 @@ export class ListenComponent implements OnInit, OnDestroy {
     this.ref.detectChanges();
   }
 
-  getListens(): void {
-    this.listens = JSON.parse(localStorage.getItem( 'listens'));
-  }
+  // getListens(): void {
+  //   this.listens = JSON.parse(localStorage.getItem( 'listens'));
+  // }
 
-  delete(listen: Listen): void {
-    this.listens = this.listens.filter(l => l !== listen);
-    localStorage.setItem( 'listens', JSON.stringify(this.listens));
-    const message = 'Spracheingabe gelöscht';
-    this.messages.push(message);
-    this.ref.detectChanges();
-  }
+  // delete(listen: Listen): void {
+  //   this.listens = this.listens.filter(l => l !== listen);
+  //   localStorage.setItem( 'listens', JSON.stringify(this.listens));
+  //   const message = 'Spracheingabe gelöscht';
+  //   this.messages.push(message);
+  //   this.ref.detectChanges();
+  // }
 
-  add(content: string): void {
-    content = content.trim();
-    const context = 'SampleApp';
-    // const listenId = '';
-    if (!content) { return; }
-    this.listens.push({ content, context } as Listen);
-    localStorage.setItem( 'listens', JSON.stringify(this.listens));
-    const message = 'Spracheingabe gespeichert';
-    this.messages.push(message);
-    this.ref.detectChanges();
-  }
+  // add(content: string): void {
+  //   content = content.trim();
+  //   const context = 'SampleApp';
+  //   // const listenId = '';
+  //   if (!content) { return; }
+  //   this.listens.push({ content, context } as Listen);
+  //   localStorage.setItem( 'listens', JSON.stringify(this.listens));
+  //   const message = 'Spracheingabe gespeichert';
+  //   this.messages.push(message);
+  //   this.ref.detectChanges();
+  // }
 
   start(): void {
     this.errorFlag = false;

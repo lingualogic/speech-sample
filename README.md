@@ -5,7 +5,7 @@ Das Speech-Sample ist eine Beispielanwendung in [Angular](https://angular.io/), 
 
 ## Letzte Version
 
-* 0.5.7.0007 Alpha vom 31.03.2019 [Release Notizen](./CHANGELOG.md)
+* 0.5.8.0008 Alpha vom 07.04.2019 [Release Notizen](./CHANGELOG.md)
 
 Speech-Angular ist noch in einem frühen Entwicklungsstadium und sollte noch nicht für den produktiven Einsatz verwendet werden.
 
@@ -59,9 +59,20 @@ danach werden alle NPM-Pakete für Speech-Sample mit folgendem Befehl installier
 
 Das Beispiel kann mit `npm start` oder mit dem Angular CLI Befehl `ng serve` gestartet werden.
 
-	$ ng serve --open
+	$ ng serve 
 	
 Anschließend kann es in Chrome unter `http://localhost:4200/` geöffnet werden.
+
+## Internationalisierung
+
+Dieses Beispiel wurde mit [i18n](https://angular.io/guide/i18n) internationalisiert.
+Die englische Version wird mit folgenden Befehl gestartet:
+
+  ng serve --configuration=en
+
+Eine Version für den produktiven Einsatz wird so erzeugt:
+
+  ng build --prod --i18n-file src/locale/messages.en.xlf --i18n-format xlf --i18n-locale en
 
 
 ## Beispiel auf Android und iOS starten

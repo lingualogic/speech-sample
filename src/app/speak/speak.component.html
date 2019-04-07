@@ -3,8 +3,8 @@
   <br>
   <div class="row">
     <div class="col">
-        <h3>Sprachausgabe</h3>
-        <p>Gebt einen beliebigen Text ein und lasst ihn von einer Sprachsynthese ausgeben oder verwendet Audiodateien.</p>
+        <h3 i18n="@@SpeakHead">Sprachausgabe</h3>
+        <p i18n="@@SpeakInfo">Gebt einen beliebigen Text ein und lasst ihn von einer Sprachsynthese ausgeben oder verwendet Audiodateien.</p>
         <div *ngIf="!audioOn">
           <textarea [(ngModel)]="text" class="form-control" rows="15">{{text}}</textarea>
         </div>

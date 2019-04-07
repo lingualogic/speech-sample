@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="col" >
-      <p> Bisher steht nur die Nuance NLU zur Verfügung.</p>
+      <p i18n="@@IntentEditorInfo"> Bisher steht nur die Nuance NLU zur Verfügung.</p>
     </div>
 </div>
 <div class="row">
@@ -23,7 +23,7 @@
     <div class="input-group mb-3">
       <div class="input-group-prepend">
             <span class="input-group-text"
-                  id="inputGroup-sizing-default">
+                  id="inputGroup-sizing-default" i18n="@@IntentEditorLanguage">
               Sprache:
             </span>
       </div>
@@ -36,6 +36,6 @@
     </div>
   </div>
   <div *ngIf="nlu =='NLUNuance'" class="col" >
-    <p> <b>Hinweis:</b> Die Auswahl der Sprache hängt von dem hinterlegten Nuance Mix Model ab.</p>
+    <p i18n="@@IntentEditorHint"> <b>Hinweis:</b> Die Auswahl der Sprache hängt von dem hinterlegten Nuance Mix Model ab.</p>
   </div>
 </div>

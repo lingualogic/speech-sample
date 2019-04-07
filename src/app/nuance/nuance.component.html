@@ -4,23 +4,23 @@
   <div class="row">
     <div class="col">
         <h3>Nuance Mix</h3>
-        <p>Die Nuance Communications ist einer der führenden Anbieter von Sprachlösungen weltweit.
+        <p i18n="@@NuanceInfo">Die Nuance Communications ist einer der führenden Anbieter von Sprachlösungen weltweit.
            Nuance Mix ist ihr Cloud-Service.
            Neben weiteren Stimmen die zur Sprachausgabe genutzt werden können,
            wird eine weitere Engine zur Spracherkennung zur Verfügung gestellt.
-           Speech-Angular/-Framework integiert die Engine nahtlos in Web-Applikationen, was Spracherkennung auf nahezu allen Plattformen und Browsern ermöglicht.
+           Speech-Angular/-Framework integriert die Engine nahtlos in Web-Applikationen, was Spracherkennung auf nahezu allen Plattformen und Browsern ermöglicht.
            Kernstück von Nuance Mix ist eine NLU, die in der Intent-Komponete zur Realisierung von Sprachverstehen eingesetzt werden kann.
            Die Nutzung des Cloud-Serices setzt eine Registierung voraus, die unter developer.nuance.com möglich ist.
         </p>
-        <a target="_blank" href="https://developer.nuance.com/public/index.php?task=home" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">zur Nuance-Seite</a>
+        <a target="_blank" href="https://developer.nuance.com/public/index.php?task=home" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" i18n="@@NuanceMixButton">zur Nuance-Seite</a>
     </div>
   </div>
   <br>
   <br>
   <div class="row">
-    <div class="col col-lg-8">
-      <h4>Credentials setzen:</h4>
-      <p> Zur Nutzung der Nuance-Dienste in diesem Beispiel werden Credentials benötigt.
+    <div class="col col-lg-10">
+      <h4 i18n="@@NuanceCredentialsHead">Credentials setzen:</h4>
+      <p i18n="@@NuanceCredentialsInfo"> Zur Nutzung der Nuance-Dienste in diesem Beispiel werden Credentials benötigt.
           Diese können auf developer.nuance.com im Dashboard im Reiter PUBLISH eingesehen und in dem Formular unten eingegeben werden.
           Die Daten werden local im Browser gesetzt und ausschließlich an Nuance übermittelt.
       </p>
@@ -38,7 +38,7 @@
             </div>
             <input [(ngModel)]="appId"
                    [ngModelOptions]="{standalone: true}"
-                    type="text"
+                    type="password"
                     class="form-control"
                     required
                     placeholder="{{appId}}"/>
@@ -56,7 +56,7 @@
               </div>
               <input [(ngModel)]="appKey"
                      [ngModelOptions]="{standalone: true}"
-                      type="text"
+                      type="password"
                       class="form-control"
                       required
                       placeholder="{{appKey}}"/>
@@ -85,7 +85,7 @@
         <div class="col col-lg-9">
         </div>
         <div class="col col-lg-1">
-            <button type="submit" class="btn btn-success">Speichern</button>
+            <button type="submit" class="btn btn-success" i18n="@@NuanceCredentialsButton">Speichern</button>
         </div>
     </div>
   </form>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input, Output, EventEmitter, LOCALE_ID, Inject } from '@angular/core';
 import { SpeakService } from 'speech-angular';
 
 @Component({
@@ -19,10 +19,12 @@ export class VoiceEditorComponent implements OnInit {
 
   constructor(
     private ref: ChangeDetectorRef,
+    @Inject(LOCALE_ID) private localeId: string,
     private speakService: SpeakService) { }
 
   ngOnInit() {
-    this.language = this.speakService.language;
+    this.language = this.localeId;
+    this.setLanguage();
     this.tts = this.speakService.tts;
     this.voice = this.speakService.voice;
     this.voiceList = this.speakService.getVoiceList();

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
 import { ListenService } from 'speech-angular';
 
 @Component({
@@ -12,11 +12,12 @@ export class ListenEditorComponent implements OnInit {
   asr: string;
 
   constructor(
-    private ref: ChangeDetectorRef,
+    @Inject(LOCALE_ID) private localeId: string,
     private listenService: ListenService) { }
 
   ngOnInit() {
-    this.language = this.listenService.language;
+    this.language = this.localeId;
+    this.setLanguage();
     this.asr = this.listenService.asr;
   }
 

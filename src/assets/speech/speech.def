@@ -1,5 +1,5 @@
-# Version: 1.0.0
-# Datum: 12.09.2018
+# Version: 1.0.1
+# Datum: 7.04.2019
 
 DIALOG main
 
@@ -25,6 +25,13 @@ DIALOG main
             SPEAK 3, Die Hometaste ist bereits eingeblendet.
             ACTION animate, Button, show
             SPEAK 4, Klicken Sie hier - um sie auszublenden.
+
+    STATE demo-en
+            SPEAK 4, Hello! Are you ready for a demo?
+            ACTION toggleHome, Button, show
+            SPEAK 5, The home button is at the bottom of the tablet.
+            ACTION animate, Button, show
+            SPEAK 5, Click here - to show or hide the hint.
 
 
 DIALOG helpSample

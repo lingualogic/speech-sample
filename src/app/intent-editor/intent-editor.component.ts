@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, LOCALE_ID, Inject } from '@angular/core';
 import { IntentService } from 'speech-angular';
 
 @Component({
@@ -13,11 +13,13 @@ export class IntentEditorComponent implements OnInit {
 
   constructor(
     private ref: ChangeDetectorRef,
+    @Inject(LOCALE_ID) private localeId: string,
     private intentService: IntentService
   ) { }
 
   ngOnInit() {
-    this.language = this.intentService.language;
+    this.language = this.localeId;
+    this.setLanguage();
     this.nlu = this.intentService.nlu;
   }
 

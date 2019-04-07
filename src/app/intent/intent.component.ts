@@ -2,7 +2,7 @@
  * Intent-Komponente
  */
 
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, LOCALE_ID, Inject } from '@angular/core';
 
 import { IntentService } from 'speech-angular';
 import { Intent } from './intent';
@@ -36,11 +36,12 @@ export class IntentComponent implements OnInit, OnDestroy {
   conceptFlag = false;
   conceptList: Array<Concept> = [];
 
-  intentButtonOn = false;
+  intentFlagOn = false;
   messages = [];
 
   constructor(
     private ref: ChangeDetectorRef,
+    @Inject(LOCALE_ID) private localeId: string,
     private intentService: IntentService
   ) { }
 
@@ -51,7 +52,7 @@ export class IntentComponent implements OnInit, OnDestroy {
       this.intentName = aIntentResult.intent;
       this.intentText = aIntentResult.literal;
       this.intentConfidence = aIntentResult.confidence;
-      const message = 'Gefundener Intent: ' + this.intentName + ' (Confidence: ' + this.intentConfidence + ')';
+      const message = 'Intent: ' + this.intentName + ' (Confidence: ' + this.intentConfidence + ')';
 
       if ( this.intent.conceptList.length > 0 ) {
         this.conceptFlag = true;
@@ -59,6 +60,7 @@ export class IntentComponent implements OnInit, OnDestroy {
         this.concept = this.intent.conceptList[0];
 
       }
+      this.intentFlagOn = true;
       console.log(this.intent);
       this.messages.push(message);
       this.ref.detectChanges();
@@ -66,22 +68,29 @@ export class IntentComponent implements OnInit, OnDestroy {
 
     this.errorEvent = this.intentService.errorEvent.subscribe( (error) => {
       this.errorFlag = true;
-      this.errorText = 'Fehler: ' + error.message ;
+      this.errorText = 'Error: ' + error.message ;
       this.ref.detectChanges();
     });
 
     this.intentStartEvent = this.intentService.startEvent.subscribe( () => {
-      const message = 'Sprachanalyse startet';
-      this.intent = new Intent;
-      this.intentButtonOn = true;
+      let message: string;
+      if (this.localeId === 'en') {
+        message = 'natural language understanding starts';
+      } else {
+        message = 'Sprachanalyse startet';
+      }
       console.log(message);
       this.messages.push(message);
       this.ref.detectChanges();
     });
 
     this.intentStopEvent = this.intentService.stopEvent.subscribe( () => {
-      const message = 'Sprachanalyse stoppt';
-      this.intentButtonOn = false;
+      let message: string;
+      if (this.localeId === 'en') {
+        message = 'natural language understanding stops';
+      } else {
+        message = 'Sprachanalyse stoppt';
+      }
       console.log(message);
       this.messages.push(message);
       this.ref.detectChanges();
@@ -96,16 +105,27 @@ export class IntentComponent implements OnInit, OnDestroy {
   }
 
   start(): void {
-    console.log( 'Analysetext: ', this.intentText);
+    if (!this.intentText) {
+      if (this.localeId === 'en') {
+        this.errorText = 'Please enter a Prompt.';
+      } else {
+        this.errorText = 'Bitte einen Text eingeben.';
+      }
+      this.errorFlag = true;
+      return;
+    }
+    console.log( 'Input: ', this.intentText);
+    this.intent = new Intent;
+    this.intentFlagOn = false;
     this.errorFlag = false;
     this.conceptFlag = false;
     this.intentService.text = this.intentText;
     this.intentService.start();
   }
 
-  stop(): void {
-    this.intentService.stop();
-  }
+  // stop(): void {
+  //   this.intentService.stop();
+  // }
 
   setConcept(literal: string): void {
     for (const concept of this.conceptList) {

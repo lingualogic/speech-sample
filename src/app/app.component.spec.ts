@@ -22,6 +22,8 @@ import { ShowButtonComponent } from './show-button/show-button.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { BotComponent } from './bot/bot.component';
 import { BotEditorComponent } from './bot-editor/bot-editor.component';
+import { CloudComponent } from './cloud/cloud.component';
+import { AmazonComponent } from './amazon/amazon.component';
 import { NuanceComponent } from './nuance/nuance.component';
 import { IntentEditorComponent } from './intent-editor/intent-editor.component';
 
@@ -47,6 +49,8 @@ describe('AppComponent', () => {
         DialogComponent,
         BotComponent,
         BotEditorComponent,
+        CloudComponent,
+        AmazonComponent,
         NuanceComponent,
         IntentEditorComponent
       ],

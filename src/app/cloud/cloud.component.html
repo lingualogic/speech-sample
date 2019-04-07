@@ -1,2 +1,47 @@
 <app-navbar activeName="cloud"></app-navbar>
-<app-nuance></app-nuance>
+
+<div class="container">
+    <br>
+    <div class="row">
+      <div class="col">
+          <h3 i18n="@@CloudTitle">Cloud-Dienste</h3>
+          <p i18n="@@CloudInfo">
+             Mit Hilfe von Cloud-Diensten lässt sich die Funktionalität von Speech-Angular/-Framework erweitern.
+             Für Speak werden beispielsweise weitere Stimmen bereitgestellt, die zur Text-zu-Sprache (TTS) genutzt werden können.
+             Weitere Engines für Automatic Speech Recognition (ASR) in Listen, ermöglichen Spracherkennung auf nahezu allen Plattformen und Browsern.
+             Zudem erlaubt der Einsatz von Natural Language Understanding (NLU) in Intent die Realisierung von Anwendungen mit Sprachverstehen.
+          </p>
+      </div>
+    </div>
+    <br>
+    <br>
+
+  <div class="row">
+      <div class="col-4">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Nuance Mix</h5>
+                  <p class="card-text" i18n="@@CloudNuanceInfo"> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials von Nuance Mix eingetragen werden.</p>
+                  <a class="btn btn-primary" [routerLink]="['/nuance']" i18n="@@CloudNuanceButton">Eintragen</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Amazon Polly</h5>
+                  <p class="card-text" i18n="@@CloudAmazonInfo"> Der Cloud-Dienst umfasst eine zusätzliche TTS. Hier können Credentials für Amazon Polly eingetragen werden.</p>
+                  <a class="btn btn-primary" [routerLink]="['/amazon']" i18n="@@CloudAmazonButton">Eintragen</a>
+              </div>
+          </div>
+      </div>
+      <!-- <div class="col-4">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Google Cloud</h5>
+                  <p class="card-text" i18n="@@CloudGoogleInfo"> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials für die Goolge Cloud eingetragen werden.</p>
+                  <a class="btn btn-primary" [routerLink]="['/google']" i18n="@@CloudGoogleButton">Eintragen</a>
+              </div>
+          </div>
+      </div> -->
+</div>

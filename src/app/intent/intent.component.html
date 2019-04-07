@@ -3,19 +3,18 @@
   <br>
   <div class="row">
     <div class="col">
-        <h3>Sprachanalyse </h3>
-       <p> Der Start Button startet die Spracherkennung und Sprachanalyse.
-           Mit dem Stop Button kann die Spracherkennung gestoppt werden.
-           <i>Optional</i> kann der Text direkt eingegeben werden und an das Sprachmodell gesendet werden.</p>
+        <h3 i18n="@@IntentHead">Sprachanalyse </h3>
+       <p i18n="@@IntentInfo"> Der Senden Button schickt die Texteingabe an  die Sprachanalyse.
+       </p>
     </div>
 
   </div>
   <hr>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col">
-      <p>Zunächst muss die Sprache des hinterlegten Sprachanalysemodells gewählt werden. </p>
+      <p i18n="@@IntentLanguageModel">Zunächst muss die Sprache des hinterlegten Sprachanalysemodells gewählt werden. </p>
     </div>
-  </div>
+  </div> -->
   <app-intent-editor></app-intent-editor>
   <br>
   <div class="row">
@@ -24,7 +23,7 @@
             <li class="list-group-item">
                 <form>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" [(ngModel)]="intentText" name="intent" placeholder="Hier steht, die Sprach- oder Texteingabe ..."/>
+                        <input type="text" class="form-control" [(ngModel)]="intentText" name="intent" i18n-placeholder="@@IntentInputplaceholder" placeholder="Hier Text eingeben ..."/>
                     </div>
                 </form>
             </li>
@@ -32,7 +31,7 @@
     </div>
   </div>
   <hr>
-  <div *ngIf="intent">
+  <div *ngIf="intentFlagOn">
       <div class="row">
           <div class="col col-lg-5" >
               <div class="input-group mb-3">
@@ -78,7 +77,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"
                               id="inputGroup-sizing-default">
-                          Konzept:
+                          Concept:
                         </span>
                       </div>
                       <input type="text" class="form-control" placeholder="{{concept.concept}}"/>
@@ -103,7 +102,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"
                           id="inputGroup-sizing-default">
-                      Wert:
+                      Value:
                     </span>
                   </div>
                   <input type="text" class="form-control" placeholder="{{concept.value}}"/>
@@ -111,9 +110,6 @@
             </div>
         </div>
         <hr>
-
-
-
   </div>
   <br>
   <div class="row">
@@ -127,18 +123,9 @@
               </li>
         </div>
     </div>
-    <div *ngIf="!intentText">
-      <div class="col col-lg-1">
-        <div *ngIf="!intentButtonOn">
-            <button type="button" class="btn btn-outline-success" (click)="start()">Start</button>
-          </div>
-          <div *ngIf="intentButtonOn">
-              <button type="button" class="btn btn-outline-success" (click)="stop()">Stop</button>
-          </div>
-      </div>
-    </div>
-    <div *ngIf="intentText">
-      <button type="button" class="btn btn-outline-success" (click)="start()">Senden</button>
+
+    <div class="col col-lg-1">
+      <button type="button" class="btn btn-outline-success" (click)="start()" i18n="@@IntentSend">Senden</button>
     </div>
   </div>
   <hr>

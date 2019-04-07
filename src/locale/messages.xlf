@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="ListenHead" datatype="html">
+        <source>Spracherkennung </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/listen/listen.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ListenInfo" datatype="html">
+        <source>Der Start Button startet die Spracherkennung. Die Spracheingabe wird automatisch bei Ende der Eingabe oder über den Stop Button beendet. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Über die Plustaste wird die Spracheingabe lokal gespeichert.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/listen/listen.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ListenSaveHead" datatype="html">
+        <source>Lokal gespeicherte Spracheingaben </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/listen/listen.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ListenSaveInfo" datatype="html">
+        <source>Mit der Kreuztaste wird die lokal gespeicherte Spracheingabe gelöscht.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/listen/listen.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IntentHead" datatype="html">
+        <source>Sprachanalyse </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/intent/intent.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IntentInfo" datatype="html">
+        <source> Der Start Button startet die Spracherkennung und Sprachanalyse.
+           Mit dem Stop Button kann die Spracherkennung gestoppt werden.
+           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>Optional<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> kann der Text direkt eingegeben werden und an das Sprachmodell gesendet werden.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/intent/intent.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IntentLanguageModel" datatype="html">
+        <source>Zunächst muss die Sprache des hinterlegten Sprachanalysemodells gewählt werden. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/intent/intent.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IntentSend" datatype="html">
+        <source>Senden</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/intent/intent.component.html</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SpeakEditorHead" datatype="html">
+        <source>Audiodateien verwenden:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/speak-editor/speak-editor.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SpeakEditorPath" datatype="html">
+        <source>
+              Pfad:
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/speak-editor/speak-editor.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SpeakHead" datatype="html">
+        <source>Sprachausgabe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/speak/speak.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SpeakInfo" datatype="html">
+        <source>Gebt einen beliebigen Text ein und lasst ihn von einer Sprachsynthese ausgeben oder verwendet Audiodateien.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/speak/speak.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="DialogHead" datatype="html">
+        <source>Dialog designen:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dialog/dialog.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="DialogReset" datatype="html">
+        <source>Zurücksetzen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dialog/dialog.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="DialogSave" datatype="html">
+        <source>Speichern &amp; Laden</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dialog/dialog.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="BotEditorHead" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{name}}"/> starten:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/bot-editor/bot-editor.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="InfoHead1" datatype="html">
+        <source>Eine Website oder Web-App erweitert um Sprachdienste</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/info/info.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="InfoHeadText" datatype="html">
+        <source>Dieses Beispiel nutzt Speech-Angular,  <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                            um eine Website oder Web-App um ein Voice User Infaces (VUI) zu erweitern. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/info/info.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="InfoCloudText" datatype="html">
+        <source>In Cloud werden die Credentials des jeweiligen Cloud-Dienstes eingetragen, um den Cloud-Dienst verwenden zu können.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/info/info.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="InfoSpeakText" datatype="html">
+        <source> In Speak wird Sprachausgabe mittels Sprachsynthese und durch Verwendung von Audiodateien vorgestellt. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/info/info.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="InfoActionText" datatype="html">
+        <source>In Action wird gezeigt, wie man die Funktionalität der App nutzen und steuern kann.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/info/info.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="InfoBotText" datatype="html">
+        <source>Im Bot können Dialoge designt und ausgeführt werden, so lassen sich eigene VUI Szenarien entwickeln.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/info/info.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="InfoListenText" datatype="html">
+        <source>In Listen wird Spracherkennung mittels der Web Speech API vorgestellt. Spracheingaben können lokal gespeichert werden.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/info/info.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="InfoIntentText" datatype="html">
+        <source>In Intent wird die Sprachanalyse vorgestellt.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/info/info.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ActionHead" datatype="html">
+        <source>Funktionalität der App</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/action/action.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ActionInfo" datatype="html">
+        <source>Mit dem ActionService lässt sich die Funktionalität der App steuern. Hierzu muss ein Element und eine Action gewählt werden.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+      Anschließend kann die Start- und Stopfunktion ausgeführt werden.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/action/action.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ActionElement" datatype="html">
+        <source>
+            Element:
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/action/action.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ActionName" datatype="html">
+        <source>
+            Actionname:
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/action/action.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="VoiceEditorHead" datatype="html">
+        <source>Stimme ändern:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/voice-editor/voice-editor.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="VoiceEditorLanguage" datatype="html">
+        <source>
+                Sprache:
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/voice-editor/voice-editor.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="VoiceEditorVoice" datatype="html">
+        <source>
+                  Stimme:
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/voice-editor/voice-editor.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ListenEditorInfo" datatype="html">
+        <source> Hier stehen unterschieldiche ASR-Engines zur Auswahl.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/listen-editor/listen-editor.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ListenEditorLanguage" datatype="html">
+        <source>
+              Sprache:
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/listen-editor/listen-editor.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ListenEditorHint" datatype="html">
+        <source> <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hinweis:<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> Die Auswahl der Sprache hängt bei Verwendung der Nuance ASR von dem hinterlegten Nuance Mix Model ab.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/listen-editor/listen-editor.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudTitle" datatype="html">
+        <source>Cloud-Dienste</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudInfo" datatype="html">
+        <source>
+             Mit Hilfe von Cloud-Diensten lässt sich die Funktionalität von Speech-Angular/-Framework erweitern.
+             Für Speak werden beispielsweise weitere Stimmen bereitgestellt, die zur Text-zu-Sprache (TTS) genutzt werden können.
+             Weitere Engines für Automatic Speech Recognition (ASR) in Listen, ermöglichen Spracherkennung auf nahezu allen Plattformen und Browsern.
+             Zudem erlaubt der Einsatz von Natural Language Understanding (NLU) in Intent die Realisierung von Anwendungen mit Sprachverstehen.
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudNuanceInfo" datatype="html">
+        <source> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials von Nuance Mix eingetragen werden.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudNuanceButton" datatype="html">
+        <source>Eintragen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudAmazonInfo" datatype="html">
+        <source> Der Cloud-Dienst umfasst eine zusätzliche TTS. Hier können Credentials für Amazon Polly eingetragen werden.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudAmazonButton" datatype="html">
+        <source>Eintragen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NuanceInfo" datatype="html">
+        <source>Die Nuance Communications ist einer der führenden Anbieter von Sprachlösungen weltweit.
+           Nuance Mix ist ihr Cloud-Service.
+           Neben weiteren Stimmen die zur Sprachausgabe genutzt werden können,
+           wird eine weitere Engine zur Spracherkennung zur Verfügung gestellt.
+           Speech-Angular/-Framework integriert die Engine nahtlos in Web-Applikationen, was Spracherkennung auf nahezu allen Plattformen und Browsern ermöglicht.
+           Kernstück von Nuance Mix ist eine NLU, die in der Intent-Komponete zur Realisierung von Sprachverstehen eingesetzt werden kann.
+           Die Nutzung des Cloud-Serices setzt eine Registierung voraus, die unter developer.nuance.com möglich ist.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/nuance/nuance.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NuanceMixButton" datatype="html">
+        <source>zur Nuance-Seite</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/nuance/nuance.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NuanceCredentialsHead" datatype="html">
+        <source>Credentials setzen:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/nuance/nuance.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NuanceCredentialsInfo" datatype="html">
+        <source> Zur Nutzung der Nuance-Dienste in diesem Beispiel werden Credentials benötigt.
+          Diese können auf developer.nuance.com im Dashboard im Reiter PUBLISH eingesehen und in dem Formular unten eingegeben werden.
+          Die Daten werden local im Browser gesetzt und ausschließlich an Nuance übermittelt.
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/nuance/nuance.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NuanceCredentialsButton" datatype="html">
+        <source>Speichern</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/nuance/nuance.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AmazonInfo" datatype="html">
+        <source>
+          Der Cloud-Dienst Amazon Polly von Amazon Web Services (AWS) ist ein Text-zu-Sprache-Service, der mit
+          Hilfe Deep Learning-Technologien Sprache synthetisiert, die sich wie eine menschliche Stimme anhört.
+          Er erweitert Speak um zahlreiche weitere Stimmen, die zur Sprachausgabe genutzt werden können,
+          Die Nutzung des Cloud-Serices setzt einen AWS Account voraus.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/amazon/amazon.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AmazonButton" datatype="html">
+        <source>zur Polly-Seite</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/amazon/amazon.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AmazonCredentialsHead" datatype="html">
+        <source>Credentials setzen:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/amazon/amazon.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AmazonCredentialsInfo" datatype="html">
+        <source> Zur Nutzung von Amazon Polly wird ein Zugang über Amazon Cognito-Identitäten-Pools benötigt.
+        Eine Anleitung zur Erstellung findet sich <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/> hier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+        Die Daten müssen unten eingetragen werden. Sie werden local im Browser gesetzt und ausschließlich an Amazon übermittelt.
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/amazon/amazon.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AmazonCredentialsButton" datatype="html">
+        <source>Speichern</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/amazon/amazon.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IntentEditorInfo" datatype="html">
+        <source> Bisher steht nur die Nuance NLU zur Verfügung.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/intent-editor/intent-editor.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IntentEditorLanguage" datatype="html">
+        <source>
+              Sprache:
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/intent-editor/intent-editor.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IntentEditorHint" datatype="html">
+        <source> <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hinweis:<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> Die Auswahl der Sprache hängt von dem hinterlegten Nuance Mix Model ab.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/intent-editor/intent-editor.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

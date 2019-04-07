@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, LOCALE_ID, Inject } from '@angular/core';
 import { SpeakService, BotService } from 'speech-angular';
 
 @Component({
@@ -17,6 +17,7 @@ export class SpeakEditorComponent implements OnInit {
   audioFileFormat: string;
 
   constructor(
+    @Inject(LOCALE_ID) private localeId: string,
     private speakService: SpeakService) {
   }
 
@@ -24,9 +25,12 @@ export class SpeakEditorComponent implements OnInit {
     this.audioButtonOn = this.speakService.audio;
     this.audioFilePath = this.speakService.path;
     this.audioFileFormat = this.speakService.format;
-    this.audioFileName = 'HalloWelt';
+    if (this.localeId === 'en') {
+      this.audioFileName = 'HelloWorld';
+    } else {
+      this.audioFileName = 'HalloWelt';
+    }
     this.setAudioOn();
-
   }
 
   setAudioOn() {

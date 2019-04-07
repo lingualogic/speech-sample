@@ -138,12 +138,7 @@ module.exports = ({ gulp, exec, srcDir, distDir, electronDir, electronAppDir, el
 
     gulp.task('electron-run', (done) => {
         runSquence(
-            'electron-prepare',
-            'electron-switch-zone-mix',
-            'electron-ng-build',
-            'electron-switch-zone',
-            'electron-copy-dist',
-            'electron-remove-absolute-assets',
+            'electron-build',
             'electron-run-app',
             (err) => {
                 if(err) {
