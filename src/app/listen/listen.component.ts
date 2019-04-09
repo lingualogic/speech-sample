@@ -9,6 +9,7 @@ import { Listen } from '../listen';
 // import { LISTENS } from '../mock-listens';
 
 import { ListenService } from 'speech-angular';
+import { AppLocaleService } from '../app-locale.service';
 
 
 @Component({
@@ -36,10 +37,11 @@ export class ListenComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private ref: ChangeDetectorRef,
-    @Inject(LOCALE_ID) private localeId: string,
-    private listenService: ListenService
+    private localeService: AppLocaleService,
+    private listenService: ListenService,
+    private ref: ChangeDetectorRef
   ) { }
+
 
   ngOnInit(): void {
     // this.errorText = 'Error: AudioPlayer._decodeAudio: DOMException';
@@ -54,7 +56,7 @@ export class ListenComponent implements OnInit, OnDestroy {
 
     this.listenResult = this.listenService.resultEvent.subscribe(aText => {
       let message: string;
-      if (this.localeId === 'en') {
+      if (this.localeService.isEnglish()) {
         message = 'voice input: ' + aText;
       } else {
         message = 'Eingabe: ' + aText;
@@ -68,7 +70,7 @@ export class ListenComponent implements OnInit, OnDestroy {
     this.listenStartEvent = this.listenService.startEvent.subscribe( () => {
       this.messages = [];
       let message: string;
-      if (this.localeId === 'en') {
+      if (this.localeService.isEnglish()) {
         message = 'speech recognition starts';
       } else {
         message = 'Spracherkennung startet';
@@ -81,7 +83,7 @@ export class ListenComponent implements OnInit, OnDestroy {
 
     this.listenStopEvent = this.listenService.stopEvent.subscribe( () => {
       let message: string;
-      if (this.localeId === 'en') {
+      if (this.localeService.isEnglish()) {
         message = 'speech recognition stops';
       } else {
         message = 'Spracherkennung stoppt';

@@ -39,6 +39,8 @@ import { CloudComponent } from './cloud/cloud.component';
 import { NuanceComponent } from './nuance/nuance.component';
 import { AmazonComponent } from './amazon/amazon.component';
 import { IntentEditorComponent } from './intent-editor/intent-editor.component';
+import { AppLocaleService } from './app-locale.service';
+
 
 // speech-angular
 
@@ -83,6 +85,7 @@ const localeID = 'de';
     ],
     providers: [
         { provide: LOCALE_ID, useValue: localeID },
+        AppLocaleService,
         SpeakService,
         ActionService,
         ListenService,
@@ -117,11 +120,13 @@ export class AppModule {
 
 @NgModule({})
 export class SampleSharedModule {
+
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: AppModule,
             providers: [
                 { provide: LOCALE_ID, useValue: localeID },
+                AppLocaleService,
                 SpeakService,
                 ActionService,
                 ListenService,

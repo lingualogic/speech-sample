@@ -2,11 +2,12 @@
  * Intent-Komponente
  */
 
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, LOCALE_ID, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 
 import { IntentService } from 'speech-angular';
 import { Intent } from './intent';
 import { Concept } from './concept';
+import { AppLocaleService } from '../app-locale.service';
 
 
 @Component({
@@ -40,9 +41,9 @@ export class IntentComponent implements OnInit, OnDestroy {
   messages = [];
 
   constructor(
-    private ref: ChangeDetectorRef,
-    @Inject(LOCALE_ID) private localeId: string,
-    private intentService: IntentService
+    private localeService: AppLocaleService,
+    private intentService: IntentService,
+    private ref: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -74,7 +75,7 @@ export class IntentComponent implements OnInit, OnDestroy {
 
     this.intentStartEvent = this.intentService.startEvent.subscribe( () => {
       let message: string;
-      if (this.localeId === 'en') {
+      if (this.localeService.isEnglish()) {
         message = 'natural language understanding starts';
       } else {
         message = 'Sprachanalyse startet';
@@ -86,7 +87,7 @@ export class IntentComponent implements OnInit, OnDestroy {
 
     this.intentStopEvent = this.intentService.stopEvent.subscribe( () => {
       let message: string;
-      if (this.localeId === 'en') {
+      if (this.localeService.isEnglish()) {
         message = 'natural language understanding stops';
       } else {
         message = 'Sprachanalyse stoppt';
@@ -106,7 +107,7 @@ export class IntentComponent implements OnInit, OnDestroy {
 
   start(): void {
     if (!this.intentText) {
-      if (this.localeId === 'en') {
+      if ( this.localeService.isEnglish()) {
         this.errorText = 'Please enter a Prompt.';
       } else {
         this.errorText = 'Bitte einen Text eingeben.';

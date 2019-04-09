@@ -17,5 +17,9 @@
     ],
     "module": "es2015",
     "baseUrl": "./"
-  }
+  },
+  "exclude": [
+    "website/**/*.ts"
+  ]
+
 }

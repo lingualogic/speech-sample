@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy, ViewChild, LOCALE_ID, Inject  } from '@angular/core';
 import { SpeakService } from 'speech-angular';
 import { SpeakEditorComponent } from './../speak-editor/speak-editor.component';
+import { AppLocaleService } from '../app-locale.service';
 
 
 @Component({
@@ -28,13 +29,13 @@ export class SpeakComponent implements OnInit, OnDestroy {
   messages = [];
 
   constructor(
-    private ref: ChangeDetectorRef,
-    @Inject(LOCALE_ID) private localeId: string,
-    private speakService: SpeakService) {
-      }
+    private localeService: AppLocaleService,
+    private speakService: SpeakService,
+    private ref: ChangeDetectorRef ) {
+    }
 
   ngOnInit() {
-    if (this.localeId === 'en') {
+    if (this.localeService.isEnglish()) {
         this.text = 'Please enter a prompt...';
     } else {
         this.text = 'Geben Sie ein, was gesagt  werden soll...';
@@ -43,7 +44,7 @@ export class SpeakComponent implements OnInit, OnDestroy {
     this.speakStartEvent = this.speakService.startEvent.subscribe( () => {
       this.messages = [];
       let message: string;
-      if (this.localeId === 'en') {
+      if (this.localeService.isEnglish()) {
         message = 'Start voice output';
       } else {
         message = 'Sprachausgabe startet';
@@ -56,7 +57,7 @@ export class SpeakComponent implements OnInit, OnDestroy {
 
     this.speakStopEvent = this.speakService.stopEvent.subscribe( () => {
       let message: string;
-      if (this.localeId === 'en') {
+      if (this.localeService.isEnglish()) {
         message = 'Stop voice output';
       } else {
         message = 'Sprachausgabe stoppt';

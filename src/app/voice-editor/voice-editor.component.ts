@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, Input, Output, EventEmitter, LOCALE_ID, Inject } from '@angular/core';
 import { SpeakService } from 'speech-angular';
+import { AppLocaleService } from '../app-locale.service';
 
 @Component({
   selector: 'app-voice-editor',
@@ -18,12 +19,12 @@ export class VoiceEditorComponent implements OnInit {
   voiceList: string[];
 
   constructor(
-    private ref: ChangeDetectorRef,
-    @Inject(LOCALE_ID) private localeId: string,
-    private speakService: SpeakService) { }
+    private localeService: AppLocaleService,
+    private speakService: SpeakService,
+    private ref: ChangeDetectorRef ) { }
 
   ngOnInit() {
-    this.language = this.localeId;
+    this.language = this.localeService.localeId;
     this.setLanguage();
     this.tts = this.speakService.tts;
     this.voice = this.speakService.voice;

@@ -87,7 +87,7 @@ module.exports = ({ gulp, credentialsDir }) => {
      * Installiert die WebDriver-Treiber fuer die  Protractor-Tests
      */
 
-    gulp.task('install-webdriver', shell.task('node_modules/protractor/bin/webdriver-manager update'));
+    gulp.task('install-webdriver', shell.task('node node_modules/protractor/bin/webdriver-manager update'));
 
 
     /**

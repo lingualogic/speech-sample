@@ -1,5 +1,6 @@
 import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
 import { ListenService } from 'speech-angular';
+import { AppLocaleService } from '../app-locale.service';
 
 @Component({
   selector: 'app-listen-editor',
@@ -12,11 +13,11 @@ export class ListenEditorComponent implements OnInit {
   asr: string;
 
   constructor(
-    @Inject(LOCALE_ID) private localeId: string,
+    private localeService: AppLocaleService,
     private listenService: ListenService) { }
 
   ngOnInit() {
-    this.language = this.localeId;
+    this.language = this.localeService.localeId;
     this.setLanguage();
     this.asr = this.listenService.asr;
   }
