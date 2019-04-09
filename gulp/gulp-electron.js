@@ -7,7 +7,7 @@ const del = require('del');
 const path = require('path');
 const inject = require('gulp-inject-string');
 const shell = require('gulp-shell');
-const runSquence = require('run-sequence');
+const runSequence = require('run-sequence');
 
 
 // Electron spezifisch
@@ -114,7 +114,7 @@ module.exports = ({ gulp, exec, srcDir, distDir, electronDir, electronAppDir, el
 
 
     gulp.task('electron-build', (done) => {
-        runSquence(
+        runSequence(
             'electron-prepare',
             'electron-switch-zone-mix',
             'electron-ng-build',
@@ -137,7 +137,7 @@ module.exports = ({ gulp, exec, srcDir, distDir, electronDir, electronAppDir, el
 
 
     gulp.task('electron-run', (done) => {
-        runSquence(
+        runSequence(
             'electron-build',
             'electron-run-app',
             (err) => {

@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const path = require('path');
 const childProcess = require('child_process');
 const shell = require('gulp-shell');
+const runSequence = require('run-sequence');
+
 
 // Verzeichnis-Konstanten
 
@@ -13,12 +15,13 @@ const testDir = 'e2e';
 const distDir = 'dist';
 const assetsDir = 'src/assets';
 const buildDir = 'build';
-const cordovaDir = 'cordova';
+const cordovaDir = 'cordova-app';
 const cordovaRootDir = path.join(rootDir, cordovaDir);
 const cordovaAppDir = path.join(rootDir, cordovaDir, 'app');
 const cordovaWwwDir = path.join(rootDir, cordovaDir, 'app/www');
-const electronDir = 'electron';
-const electronWwwDir = 'electron/www';
+const electronDir = 'electron-app';
+const electronAppDir = `${electronDir}/app`;
+const electronWwwDir = `${electronDir}/www`;
 
 
 const exec = (cmd, done) => {
@@ -52,6 +55,7 @@ const settings = {
 	cordovaAppDir,
 	cordovaWwwDir,
 	electronDir,
+	electronAppDir,
 	electronWwwDir,
 };
 
@@ -86,8 +90,8 @@ gulp.task('install-cordova-npm', shell.task('npm install --save-dev cordova'));
 
 gulp.task('install-cordova', function(callback) {
 	runSequence(
-		install-cordova-npm,
-		cordova-install,
+		'install-cordova-npm',
+		'cordova-install',
 		callback);
 });
   

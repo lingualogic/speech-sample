@@ -6,7 +6,7 @@
 const rimraf = require('rimraf');
 const path = require('path');
 const inject = require('gulp-inject-string');
-const runSquence = require('run-sequence');
+const runSequence = require('run-sequence');
 
 
 module.exports = ({ gulp, exec, distDir, appDir, cordovaRootDir, cordovaAppDir, cordovaWwwDir }) => {
@@ -48,7 +48,7 @@ module.exports = ({ gulp, exec, distDir, appDir, cordovaRootDir, cordovaAppDir, 
     });
 
     gulp.task('cordova-install', (done) => {
-        runSquence(
+        runSequence(
             'cordova-create-app',
             'cordova-copy-original',
             // auf allen Plattformen verfuegbar
@@ -105,7 +105,7 @@ module.exports = ({ gulp, exec, distDir, appDir, cordovaRootDir, cordovaAppDir, 
 
 
     gulp.task('cordova-generate', (done) => {
-        runSquence(
+        runSequence(
             'cordova-prepare',
             'cordova-copy-dist',
             'cordova-replace-href',
@@ -142,7 +142,7 @@ module.exports = ({ gulp, exec, distDir, appDir, cordovaRootDir, cordovaAppDir, 
 
 
     gulp.task('cordova-browser', (done) => {
-        runSquence(
+        runSequence(
             'cordova-generate',
             'cordova-run-browser',
             (err) => {
@@ -160,7 +160,7 @@ module.exports = ({ gulp, exec, distDir, appDir, cordovaRootDir, cordovaAppDir, 
     });
 
     gulp.task('cordova-android', (done) => {
-        runSquence(
+        runSequence(
             'cordova-generate',
             'cordova-run-android',
             (err) => {
@@ -178,7 +178,7 @@ module.exports = ({ gulp, exec, distDir, appDir, cordovaRootDir, cordovaAppDir, 
     });
 
     gulp.task('cordova-ios', (done) => {
-        runSquence(
+        runSequence(
             'cordova-generate',
             'cordova-run-ios',
             (err) => {
