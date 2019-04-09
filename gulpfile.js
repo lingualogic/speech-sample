@@ -20,9 +20,8 @@ const cordovaRootDir = path.join(rootDir, cordovaDir);
 const cordovaAppDir = path.join(rootDir, cordovaDir, 'app');
 const cordovaWwwDir = path.join(rootDir, cordovaDir, 'app/www');
 const electronDir = 'electron-app';
-const electronAppDir = `${electronDir}/app`;
-const electronWwwDir = `${electronDir}/www`;
-
+const electronAppDir = path.join( electronDir, 'app' );
+const electronWwwDir = path.join( electronDir, 'www' );
 
 
 const exec = (cmd, done) => {
