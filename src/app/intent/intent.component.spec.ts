@@ -5,8 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HelpModule, HelpService } from './../help/help.module';
 
 import { IntentComponent } from './intent.component';
-import { VoiceEditorComponent } from './../voice-editor/voice-editor.component';
 import { IntentEditorComponent } from './../intent-editor/intent-editor.component';
+import { IntentDialogflowComponent } from './../intent-dialogflow/intent-dialogflow.component';
+import { IntentMixnluComponent } from './../intent-mixnlu/intent-mixnlu.component';
+import { VoiceEditorComponent } from './../voice-editor/voice-editor.component';
 import { NavbarComponent } from './../navbar/navbar.component';
 
 
@@ -20,6 +22,8 @@ describe('IntentComponent', () => {
                 IntentComponent,
                 VoiceEditorComponent,
                 IntentEditorComponent,
+                IntentDialogflowComponent,
+                IntentMixnluComponent,
                 NavbarComponent
             ],
             imports: [

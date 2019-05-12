@@ -38,13 +38,25 @@ import { ListenEditorComponent } from './listen-editor/listen-editor.component';
 import { CloudComponent } from './cloud/cloud.component';
 import { NuanceComponent } from './nuance/nuance.component';
 import { AmazonComponent } from './amazon/amazon.component';
+import { GoogleComponent } from './google/google.component';
 import { IntentEditorComponent } from './intent-editor/intent-editor.component';
 import { AppLocaleService } from './app-locale.service';
 
 
 // speech-angular
 
-import { SpeakService, ActionService, ListenService, IntentService, BotService, NuanceService, AmazonService } from 'speech-angular';
+import {
+    SpeakService,
+    ActionService,
+    ListenService,
+    IntentService,
+    BotService,
+    NuanceService,
+    AmazonService,
+    GoogleService
+} from 'speech-angular';
+import { IntentMixnluComponent } from './intent-mixnlu/intent-mixnlu.component';
+import { IntentDialogflowComponent } from './intent-dialogflow/intent-dialogflow.component';
 
 
 const localeID = 'de';
@@ -74,7 +86,10 @@ const localeID = 'de';
         CloudComponent,
         NuanceComponent,
         AmazonComponent,
-        IntentEditorComponent
+        GoogleComponent,
+        IntentEditorComponent,
+        IntentMixnluComponent,
+        IntentDialogflowComponent
     ],
     imports: [
         BrowserModule,
@@ -92,7 +107,8 @@ const localeID = 'de';
         IntentService,
         BotService,
         NuanceService,
-        AmazonService
+        AmazonService,
+        GoogleService
     ],
     bootstrap: [AppComponent]
 })
@@ -133,7 +149,8 @@ export class SampleSharedModule {
                 IntentService,
                 BotService,
                 NuanceService,
-                AmazonService
+                AmazonService,
+                GoogleService
             ]
         };
     }

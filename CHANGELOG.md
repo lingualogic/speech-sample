@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.9.0009 Alpha (12.05.2019)
+
+### Features
+
+* **Google:** Einbau der Google-Credentials für die Google Dialogflow-NLU
+
+
 ## 0.5.8.0008 Alpha (07.04.2019)
 
 ### Features

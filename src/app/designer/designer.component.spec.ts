@@ -23,6 +23,8 @@ import { ShowButtonComponent } from './../show-button/show-button.component';
 import { NuanceComponent } from './../nuance/nuance.component';
 import { NavbarComponent } from './../navbar/navbar.component';
 import { IntentEditorComponent } from './../intent-editor/intent-editor.component';
+import { IntentDialogflowComponent } from './../intent-dialogflow/intent-dialogflow.component';
+import { IntentMixnluComponent } from './../intent-mixnlu/intent-mixnlu.component';
 
 
 describe('DesignerComponent', () => {
@@ -48,7 +50,9 @@ describe('DesignerComponent', () => {
         ShowButtonComponent,
         NuanceComponent,
         NavbarComponent,
-        IntentEditorComponent
+        IntentEditorComponent,
+        IntentDialogflowComponent,
+        IntentMixnluComponent
       ],
       imports: [
         RouterTestingModule,

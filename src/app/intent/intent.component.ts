@@ -32,6 +32,7 @@ export class IntentComponent implements OnInit, OnDestroy {
   intentText = '';
   intentName = '';
   intentConfidence = 0;
+  intentSpeech = '';
 
   concept: Concept;
   conceptFlag = false;
@@ -53,17 +54,17 @@ export class IntentComponent implements OnInit, OnDestroy {
       this.intentName = aIntentResult.intent;
       this.intentText = aIntentResult.literal;
       this.intentConfidence = aIntentResult.confidence;
-      const message = 'Intent: ' + this.intentName + ' (Confidence: ' + this.intentConfidence + ')';
 
       if ( this.intent.conceptList.length > 0 ) {
         this.conceptFlag = true;
         this.conceptList = this.intent.conceptList;
         this.concept = this.intent.conceptList[0];
-
       }
-      this.intentFlagOn = true;
-      console.log(this.intent);
+
+      const message = 'Intent: ' + this.intentName ;
       this.messages.push(message);
+
+      this.intentFlagOn = true;
       this.ref.detectChanges();
     });
 
@@ -115,9 +116,7 @@ export class IntentComponent implements OnInit, OnDestroy {
       this.errorFlag = true;
       return;
     }
-    console.log( 'Input: ', this.intentText);
-    this.intent = new Intent;
-    this.intentFlagOn = false;
+    this.clear();
     this.errorFlag = false;
     this.conceptFlag = false;
     this.intentService.text = this.intentText;
@@ -128,14 +127,26 @@ export class IntentComponent implements OnInit, OnDestroy {
   //   this.intentService.stop();
   // }
 
-  setConcept(literal: string): void {
-    for (const concept of this.conceptList) {
-      if (concept.literal === literal) {
-        this.concept = concept;
-        break;
-      }
-    }
-    this.ref.detectChanges();
+  getNlu() {
+    return this.intentService.nlu;
+  }
+
+  setLanguage(language: string): void {
+    this.clear();
+    this.intentService.language = language;
+    console.log('Set Language to ' + language + '.');
+  }
+
+  setNLU(nlu: string): void {
+    this.clear();
+    this.intentService.nlu = nlu;
+    console.log('Set NLU to ' + nlu + '.');
+  }
+
+  clear() {
+    this.messages = [];
+    this.intent = new Intent;
+    this.intentFlagOn = false;
   }
 
 }

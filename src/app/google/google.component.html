@@ -1,0 +1,53 @@
+<app-navbar activeName="cloud"></app-navbar>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col">
+        <h3>Google Dialogflow</h3>
+        <p i18n="@@GoogleInfo">
+          Der Cloud-Dienst Google Dialogflow von Google Cloud ist ein Assistent-Service, der mit
+          Hilfe Deep Learning-Technologien Sprache versteht und zu Sätzen die passenden Intents zurückgibt.
+          Er erweitert Intentservice um eine zusätzliche NLU, die zur Sprachanalyse genutzt werden kann.
+          Die Nutzung des Cloud-Serices setzt einen Dialogflow Account voraus.
+        </p>
+        <a target="_blank" href="https://dialogflow.com/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" i18n="@@GoogleButton">zur Dialogflow-Seite</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col col-lg-10">
+      <h4 i18n="@@GoogleCredentialsHead">Credentials setzen:</h4>
+      <p i18n="@@GoogleCredentialsInfo"> Zur Nutzung von Dialogflow wird ein Client access token benötigt. Er kann in den Setting des Dialogflow Assistenten im Tab General unter API Keys eingesehen werden.
+        Der Key muss unten eingetragen werden. Er wird local im Browser gesetzt und ausschließlich an Google Dialogflow übermittelt.
+      </p>
+    </div>
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col col-lg-10" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                    id="inputGroup-sizing-default">
+                    Client access token:
+              </span>
+            </div>
+            <input [(ngModel)]="appKey"
+                   [ngModelOptions]="{standalone: true}"
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="{{appKey}}"/>
+          </div>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="col col-lg-9">
+        </div>
+        <div class="col col-lg-1">
+            <button type="submit" class="btn btn-success" i18n="@@GoogleCredentialsButton">Speichern</button>
+        </div>
+    </div>
+  </form>
+</div>

@@ -7,7 +7,7 @@ import { environment } from './environments/environment';
 
 // speech-angular
 
-import { AmazonModule, NuanceModule } from 'speech-angular';
+import { AmazonModule, GoogleModule, NuanceModule } from 'speech-angular';
 
 
 // Amazon-Credentials
@@ -18,6 +18,17 @@ const amazonOption = {
     amazonDynamicCredentialsFlag: true,
     amazonRegion: REGION,
     amazonIdentityPoolId: IDENTITY_POOL_ID,
+    errorOutputFlag: true
+};
+
+
+// Google-Credentials
+
+// TODO: Hier muessen die echten Zugangsdaten eingetragen werden
+import { GOOGLE_APP_KEY } from './../credentials/google-credentials';
+const googleOption = {
+    googleDynamicCredentialsFlag: true,
+    googleAppKey: GOOGLE_APP_KEY,
     errorOutputFlag: true
 };
 
@@ -48,6 +59,16 @@ AmazonModule.init( amazonOption, (aAmazonFlag: boolean) => {
         console.log( '===> Amazon:', aAmazonFlag);
     }
     environment.amazon = aAmazonFlag;
+});
+
+
+// Initialisierung des Google Cloud-Service
+
+GoogleModule.init( googleOption, (aGoogleFlag: boolean) => {
+    if ( googleOption && googleOption.errorOutputFlag ) {
+        console.log( '===> Google:', aGoogleFlag);
+    }
+    environment.amazon = aGoogleFlag;
 });
 
 

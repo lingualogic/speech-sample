@@ -15,7 +15,7 @@
       <p i18n="@@IntentLanguageModel">Zunächst muss die Sprache des hinterlegten Sprachanalysemodells gewählt werden. </p>
     </div>
   </div> -->
-  <app-intent-editor></app-intent-editor>
+  <app-intent-editor (changeNLU)="setNLU($event)" (changeLanguage)="setLanguage($event)"></app-intent-editor>
   <br>
   <div class="row">
     <div class="col">
@@ -32,85 +32,14 @@
   </div>
   <hr>
   <div *ngIf="intentFlagOn">
-      <div class="row">
-          <div class="col col-lg-5" >
-              <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"
-                          id="inputGroup-sizing-default">
-                      Literal:
-                    </span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="{{intent.literal}}"/>
-              </div>
-            </div>
-            <div class="col col-lg-2" ></div>
-            <div class="col col-lg-5" *ngIf="conceptFlag">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"
-                            id="inputGroup-sizing-default">
-                        Literal:
-                      </span>
-                    </div>
-                    <select class="custom-select" (change)="setConcept($event.target.value)">
-                        <option *ngFor="let c of conceptList"> {{c.literal}} </option>
-                      </select>
-                </div>
-              </div>
-        </div>
-        <div class="row">
-            <div class="col col-lg-5" >
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"
-                            id="inputGroup-sizing-default">
-                        Intent:
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="{{intent.intent}}"/>
-                </div>
-              </div>
-              <div class="col col-lg-2" ></div>
-              <div class="col col-lg-5" *ngIf="conceptFlag">
-                  <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"
-                              id="inputGroup-sizing-default">
-                          Concept:
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" placeholder="{{concept.concept}}"/>
-                  </div>
-                </div>
-          </div>
-        <div class="row">
-          <div class="col col-lg-5" >
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                    <span class="input-group-text"
-                          id="inputGroup-sizing-default">
-                      Confidence:
-                    </span>
-              </div>
-              <input type="text" class="form-control" placeholder="{{intent.confidence}}"/>
-            </div>
-          </div>
-          <div class="col col-lg-2" ></div>
-          <div class="col col-lg-5" *ngIf="conceptFlag">
-              <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"
-                          id="inputGroup-sizing-default">
-                      Value:
-                    </span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="{{concept.value}}"/>
-              </div>
-            </div>
-        </div>
-        <hr>
+      <div *ngIf="getNlu() =='NLUGoogle'">
+        <app-intent-dialogflow [intent]=intent [conceptList]=conceptList></app-intent-dialogflow>
+      </div>
+      <div *ngIf="getNlu() =='NLUNuance'">
+        <app-intent-mixnlu [intent]=intent [conceptList]=conceptList></app-intent-mixnlu>
+      </div>
   </div>
+  <hr>
   <br>
   <div class="row">
     <div class="col">

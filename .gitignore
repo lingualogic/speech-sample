@@ -38,6 +38,7 @@ npm-debug.log
 testem.log
 typings/
 documentation/
+credentials/
 
 # e2e
 e2e/*.js
@@ -53,3 +54,4 @@ package-lock.json
 
 nuance-credentials*
 amazon-credentials*
+google-credentials*

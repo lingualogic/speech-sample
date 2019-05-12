@@ -22,6 +22,8 @@ import { BotComponent } from './../bot/bot.component';
 import { BotEditorComponent } from './../bot-editor/bot-editor.component';
 import { NuanceComponent } from './../nuance/nuance.component';
 import { IntentEditorComponent } from './../intent-editor/intent-editor.component';
+import { IntentDialogflowComponent } from './../intent-dialogflow/intent-dialogflow.component';
+import { IntentMixnluComponent } from './../intent-mixnlu/intent-mixnlu.component';
 
 
 describe('NavbarComponent', () => {
@@ -47,7 +49,9 @@ describe('NavbarComponent', () => {
                 BotComponent,
                 BotEditorComponent,
                 NuanceComponent,
-                IntentEditorComponent
+                IntentEditorComponent,
+                IntentDialogflowComponent,
+                IntentMixnluComponent,
             ],
             imports: [
                 RouterTestingModule,

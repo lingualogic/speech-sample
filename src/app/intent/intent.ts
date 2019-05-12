@@ -3,5 +3,6 @@ export class Intent {
   literal: string;
   conceptList: any;
   confidence: number;
+  speech: string;
 }
 

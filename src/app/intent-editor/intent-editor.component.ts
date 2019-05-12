@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, LOCALE_ID, Inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, LOCALE_ID, Inject, EventEmitter, Output } from '@angular/core';
 import { IntentService } from 'speech-angular';
 import { AppLocaleService } from '../app-locale.service';
 
@@ -9,6 +9,9 @@ import { AppLocaleService } from '../app-locale.service';
   styleUrls: ['./intent-editor.component.css']
 })
 export class IntentEditorComponent implements OnInit {
+
+  @Output() changeNLU = new EventEmitter<string>();
+  @Output() changeLanguage = new EventEmitter<string>();
 
   language: string;
   nlu: string;
@@ -26,13 +29,11 @@ export class IntentEditorComponent implements OnInit {
   }
 
   setLanguage(): void {
-    this.intentService.language = this.language;
-    console.log('Set Language to ' + this.language + '.');
+    this.changeLanguage.emit(this.language);
   }
 
   setNLU(): void {
-    this.intentService.nlu = this.nlu;
-    console.log('Set NLU to ' + this.nlu + '.');
+    this.changeNLU.emit(this.nlu);
   }
 
 }

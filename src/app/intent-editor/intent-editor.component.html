@@ -10,12 +10,10 @@
         <select [(ngModel)]="nlu"
                 class="custom-select"
                 (change)="setNLU()" >
-          <option value="NLUNuance">Nuance</option>
+          <option value="NLUNuance" selected>Nuance</option>
+          <option value="NLUGoogle">Google</option>
         </select>
       </div>
-    </div>
-    <div class="col" >
-      <p i18n="@@IntentEditorInfo"> Bisher steht nur die Nuance NLU zur Verfügung.</p>
     </div>
 </div>
 <div class="row">

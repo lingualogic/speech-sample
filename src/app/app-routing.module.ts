@@ -12,6 +12,8 @@ import { PlaygroundComponent } from './playground/playground.component';
 import { CloudComponent} from './cloud/cloud.component';
 import { NuanceComponent} from './nuance/nuance.component';
 import { AmazonComponent } from './amazon/amazon.component';
+import { GoogleComponent } from './google/google.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/info', pathMatch: 'full' },
@@ -25,7 +27,8 @@ const routes: Routes = [
   { path: 'playground', component: PlaygroundComponent },
   { path: 'cloud', component: CloudComponent },
   { path: 'nuance', component: NuanceComponent },
-  { path: 'amazon', component: AmazonComponent }
+  { path: 'amazon', component: AmazonComponent },
+  { path: 'google', component: GoogleComponent }
 ];
 
 
