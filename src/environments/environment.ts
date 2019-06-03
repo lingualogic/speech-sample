@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   amazon: false,
+  google: false,
   nuance: false
 };

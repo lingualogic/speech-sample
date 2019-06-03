@@ -68,7 +68,7 @@ GoogleModule.init( googleOption, (aGoogleFlag: boolean) => {
     if ( googleOption && googleOption.errorOutputFlag ) {
         console.log( '===> Google:', aGoogleFlag);
     }
-    environment.amazon = aGoogleFlag;
+    environment.google = aGoogleFlag;
 });
 
 
