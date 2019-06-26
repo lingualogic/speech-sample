@@ -16,32 +16,42 @@
     <br>
     <br>
 
-  <div class="row">
-      <div class="col-4">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Nuance Mix</h5>
-                  <p class="card-text" i18n="@@CloudNuanceInfo"> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials von Nuance Mix eingetragen werden.</p>
-                  <a class="btn btn-primary" [routerLink]="['/nuance']" i18n="@@CloudNuanceButton">Eintragen</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-4">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Amazon Polly</h5>
-                  <p class="card-text" i18n="@@CloudAmazonInfo"> Der Cloud-Dienst umfasst eine zusätzliche TTS. Hier können Credentials für Amazon Polly eingetragen werden.</p>
-                  <a class="btn btn-primary" [routerLink]="['/amazon']" i18n="@@CloudAmazonButton">Eintragen</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-4">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Google Cloud</h5>
-                  <p class="card-text" i18n="@@CloudGoogleInfo"> Der Cloud-Dienst umfasst eine zusätzliche NLU. Hier können Credentials für Dialogflow eingetragen werden.</p>
-                  <a class="btn btn-primary" [routerLink]="['/google']" i18n="@@CloudGoogleButton">Eintragen</a>
-              </div>
-          </div>
-      </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Amazon Polly</h5>
+                    <p class="card-text" i18n="@@CloudAmazonInfo"> Der Cloud-Dienst umfasst eine zusätzliche TTS. Hier können Credentials für Amazon Polly eingetragen werden.</p>
+                    <a class="btn btn-primary" [routerLink]="['/amazon']" i18n="@@CloudAmazonButton">Eintragen</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Mircosoft Azure</h5>
+                    <p class="card-text" i18n="@@CloudMicrosoftInfo"> Der Cloud-Dienst umfasst eine zusätzliche ASR. Hier können Credentials für Microsoft Azure eingetragen werden.</p>
+                    <a class="btn btn-primary" [routerLink]="['/microsoft']" i18n="@@CloudMicrosoftButton">Eintragen</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Google Cloud</h5>
+                    <p class="card-text" i18n="@@CloudGoogleInfo"> Der Cloud-Dienst umfasst eine zusätzliche NLU. Hier können Credentials für Dialogflow eingetragen werden.</p>
+                    <a class="btn btn-primary" [routerLink]="['/google']" i18n="@@CloudGoogleButton">Eintragen</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Nuance Mix</h5>
+                    <p class="card-text" i18n="@@CloudNuanceInfo"> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials von Nuance Mix eingetragen werden.</p>
+                    <a class="btn btn-primary" [routerLink]="['/nuance']" i18n="@@CloudNuanceButton">Eintragen</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

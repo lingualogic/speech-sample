@@ -1,0 +1,70 @@
+<app-navbar activeName="cloud"></app-navbar>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col">
+        <h3>Microsoft Azure</h3>
+        <p i18n="@@MicrosoftInfo">
+          Microsoft Azure verfügt über einen Service für Spracherkennung (ASR), der gesprochene Sprache in Text überträgt.
+          Die Nutzung des Cloud-Services setzt einen Microsoft Account voraus.
+        </p>
+        <a target="_blank" href="https://azure.microsoft.com" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" i18n="@@MicrosoftButton">zu Azure</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col col-lg-10">
+      <h4 i18n="@@MicrosoftCredentialsHead">Credentials setzen:</h4>
+      <p i18n="@@MicrosoftCredentialsInfo"> Zur Nutzung von Sprachdiensten in Microsoft Azure müssen Speech Ressourcen angelegt werden.
+        Eine Anleitung zur Erstellung findet sich <a target="_blank" href="https://docs.microsoft.com/de-de/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure"> hier</a>.
+        Die Region und der Subscription Key können dann unten eingetragen werden. Sie werden lokal im Browser gesetzt und ausschließlich an Microsoft übermittelt.
+      </p>
+    </div>
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col col-lg-10" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                    id="inputGroup-sizing-default">
+                    Region:
+              </span>
+            </div>
+            <input [(ngModel)]="region"
+                   [ngModelOptions]="{standalone: true}"
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="{{region}}"/>
+          </div>
+      </div>
+    </div>
+      <div class="form-row">
+        <div class="col col-lg-10" >
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                      id="inputGroup-sizing-default">
+                      Subscription Key:
+                </span>
+              </div>
+              <input [(ngModel)]="subscriptionKey"
+                     [ngModelOptions]="{standalone: true}"
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="{{subscriptionKey}}"/>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col col-lg-9">
+        </div>
+        <div class="col col-lg-1">
+            <button type="submit" class="btn btn-success" i18n="@@MicrosoftCredentialsButton">Speichern</button>
+        </div>
+    </div>
+  </form>
+</div>

@@ -13,6 +13,7 @@ import { CloudComponent} from './cloud/cloud.component';
 import { NuanceComponent} from './nuance/nuance.component';
 import { AmazonComponent } from './amazon/amazon.component';
 import { GoogleComponent } from './google/google.component';
+import { MicrosoftComponent } from './microsoft/microsoft.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'cloud', component: CloudComponent },
   { path: 'nuance', component: NuanceComponent },
   { path: 'amazon', component: AmazonComponent },
-  { path: 'google', component: GoogleComponent }
+  { path: 'google', component: GoogleComponent },
+  { path: 'microsoft', component: MicrosoftComponent }
 ];
 
 

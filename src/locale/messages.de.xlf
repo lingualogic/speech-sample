@@ -231,7 +231,7 @@
         <source> Hier stehen unterschiedliche ASR-Engines zur Auswahl.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/listen-editor/listen-editor.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ListenEditorLanguage" datatype="html">
@@ -240,14 +240,14 @@
             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/listen-editor/listen-editor.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ListenEditorHint" datatype="html">
         <source> <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hinweis:<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> Die Auswahl der Sprache hängt bei Verwendung der Nuance ASR von dem hinterlegten Nuance Mix Model ab.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/listen-editor/listen-editor.component.html</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CloudTitle" datatype="html">
@@ -269,28 +269,28 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CloudNuanceInfo" datatype="html">
-        <source> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials von Nuance Mix eingetragen werden.</source>
+      <trans-unit id="CloudAmazonInfo" datatype="html">
+        <source> Der Cloud-Dienst umfasst eine zusätzliche TTS. Hier können Credentials für Amazon Polly eingetragen werden.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cloud/cloud.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CloudNuanceButton" datatype="html">
+      <trans-unit id="CloudAmazonButton" datatype="html">
         <source>Eintragen</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cloud/cloud.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CloudAmazonInfo" datatype="html">
-        <source> Der Cloud-Dienst umfasst eine zusätzliche TTS. Hier können Credentials für Amazon Polly eingetragen werden.</source>
+      <trans-unit id="CloudMicrosoftInfo" datatype="html">
+        <source> Der Cloud-Dienst umfasst eine zusätzliche ASR. Hier können Credentials für Microsoft Azure eingetragen werden.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cloud/cloud.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CloudAmazonButton" datatype="html">
+      <trans-unit id="CloudMicrosoftButton" datatype="html">
         <source>Eintragen</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cloud/cloud.component.html</context>
@@ -309,6 +309,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/cloud/cloud.component.html</context>
           <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudNuanceInfo" datatype="html">
+        <source> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials von Nuance Mix eingetragen werden.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudNuanceButton" datatype="html">
+        <source>Eintragen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NuanceInfo" datatype="html">
@@ -439,6 +453,47 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/google/google.component.html</context>
           <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="MicrosoftInfo" datatype="html">
+        <source>
+          Microsoft Azure verfügt über einen Service für Spracherkennung (ASR), der gesprochene Sprache in Text überträgt.
+          Die Nutzung des Cloud-Services setzt einen Microsoft Account voraus.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/microsoft/microsoft.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="MicrosoftButton" datatype="html">
+        <source>zu Azure</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/microsoft/microsoft.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="MicrosoftCredentialsHead" datatype="html">
+        <source>Credentials setzen:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/microsoft/microsoft.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="MicrosoftCredentialsInfo" datatype="html">
+        <source> Zur Nutzung von Sprachdiensten in Microsoft Azure müssen Speech Ressourcen angelegt werden.
+        Eine Anleitung zur Erstellung findet sich <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/> hier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+        Die Region und der Subscription Key können dann unten eingetragen werden. Sie werden lokal im Browser gesetzt und ausschließlich an Microsoft übermittelt.
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/microsoft/microsoft.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="MicrosoftCredentialsButton" datatype="html">
+        <source>Speichern</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/microsoft/microsoft.component.html</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="IntentEditorLanguage" datatype="html">

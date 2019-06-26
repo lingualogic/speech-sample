@@ -7,7 +7,7 @@ import { environment } from './environments/environment';
 
 // speech-angular
 
-import { AmazonModule, GoogleModule, NuanceModule } from 'speech-angular';
+import { AmazonModule, GoogleModule, MicrosoftModule, NuanceModule } from 'speech-angular';
 
 
 // Amazon-Credentials
@@ -29,6 +29,18 @@ import { GOOGLE_APP_KEY } from './../credentials/google-credentials';
 const googleOption = {
     googleDynamicCredentialsFlag: true,
     googleAppKey: GOOGLE_APP_KEY,
+    errorOutputFlag: true
+};
+
+
+// Microsoft-Credentials
+
+// TODO: Hier muessen die echten Zugangsdaten eingetragen werden
+import { MICROSOFT_REGION, MICROSOFT_SUBSCRIPTION_KEY } from './../credentials/microsoft-credentials';
+const microsoftOption = {
+    microsoftDynamicCredentialsFlag: true,
+    microsoftRegion: MICROSOFT_REGION,
+    microsoftSubscriptionKey: MICROSOFT_SUBSCRIPTION_KEY,
     errorOutputFlag: true
 };
 
@@ -69,6 +81,16 @@ GoogleModule.init( googleOption, (aGoogleFlag: boolean) => {
         console.log( '===> Google:', aGoogleFlag);
     }
     environment.google = aGoogleFlag;
+});
+
+
+// Initialisierung des Microsoft Cloud-Service
+
+MicrosoftModule.init( microsoftOption, (aMicrosoftFlag: boolean) => {
+    if ( microsoftOption && microsoftOption.errorOutputFlag ) {
+        console.log( '===> Microsoft:', aMicrosoftFlag);
+    }
+    environment.microsoft = aMicrosoftFlag;
 });
 
 
