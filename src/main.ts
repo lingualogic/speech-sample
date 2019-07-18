@@ -7,7 +7,7 @@ import { environment } from './environments/environment';
 
 // speech-angular
 
-import { AmazonModule, GoogleModule, MicrosoftModule, NuanceModule } from 'speech-angular';
+import { AmazonModule, GoogleModule, MicrosoftModule, RasaModule, NuanceModule } from 'speech-angular';
 
 
 // Amazon-Credentials
@@ -41,6 +41,17 @@ const microsoftOption = {
     microsoftDynamicCredentialsFlag: true,
     microsoftRegion: MICROSOFT_REGION,
     microsoftSubscriptionKey: MICROSOFT_SUBSCRIPTION_KEY,
+    errorOutputFlag: true
+};
+
+
+// Rasa-Credentials
+
+// TODO: Hier muessen die echten Zugangsdaten eingetragen werden
+import { RASA_APP_KEY } from './../credentials/rasa-credentials';
+const rasaOption = {
+    rasaDynamicCredentialsFlag: true,
+    rasaAppKey: RASA_APP_KEY,
     errorOutputFlag: true
 };
 
@@ -91,6 +102,16 @@ MicrosoftModule.init( microsoftOption, (aMicrosoftFlag: boolean) => {
         console.log( '===> Microsoft:', aMicrosoftFlag);
     }
     environment.microsoft = aMicrosoftFlag;
+});
+
+
+// Initialisierung des Google Cloud-Service
+
+RasaModule.init( rasaOption, (aRasaFlag: boolean) => {
+    if ( rasaOption && rasaOption.errorOutputFlag ) {
+        console.log( '===> Rasa:', aRasaFlag);
+    }
+    environment.rasa = aRasaFlag;
 });
 
 

@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.13.0013 Alpha (18.07.2019)
+
+### Features
+
+* **Rasa:** der Rasa Cloud-Dienst für die NLU wurde eingebaut, um einen eigenen Rasa-Server nutzen zu können
+
+
 ## 0.5.12.0012 Alpha (08.07.2019)
 
 ### Features

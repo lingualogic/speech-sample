@@ -3,23 +3,23 @@
   <br>
   <div class="row">
     <div class="col">
-        <h3>Google Dialogflow</h3>
-        <p i18n="@@GoogleInfo">
-          Der Cloud-Dienst Google Dialogflow von Google Cloud ist ein Assistent-Service, der mit
-          Hilfe Deep Learning-Technologien Sprache versteht und zu Sätzen die passenden Intents zurückgibt.
+        <h3>Rasa Dialogflow</h3>
+        <p i18n="@@RasaInfo">
+          Der Rasa Cloud-Dienst ist ein Assistent-Service, der mit Hilfe Deep Learning-Technologien Sprache versteht 
+          und zu Sätzen die passenden Intents zurückgibt.
           Er erweitert Intentservice um eine zusätzliche NLU, die zur Sprachanalyse genutzt werden kann.
-          Die Nutzung des Cloud-Serices setzt einen Dialogflow Account voraus.
+          Die Nutzung des Cloud-Serices setzt einen aktiven Rasa-Server voraus.
         </p>
-        <a target="_blank" href="https://dialogflow.com/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" i18n="@@GoogleButton">zur Dialogflow-Seite</a>
+        <a target="_blank" href="https://rasa.com/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" i18n="@@RasaButton">zur Rasa-Seite</a>
     </div>
   </div>
   <br>
   <br>
   <div class="row">
     <div class="col col-lg-10">
-      <h4 i18n="@@GoogleCredentialsHead">Credentials setzen:</h4>
-      <p i18n="@@GoogleCredentialsInfo"> Zur Nutzung von Dialogflow wird ein Client access token benötigt. Er kann in den Setting des Dialogflow Assistenten im Tab General unter API Keys eingesehen werden.
-        Der Key muss unten eingetragen werden. Er wird lokal im Browser gesetzt und ausschließlich an Google Dialogflow übermittelt.
+      <h4 i18n="@@RasaCredentialsHead">Credentials setzen:</h4>
+      <p i18n="@@RasaCredentialsInfo"> Zur Nutzung von Rasa wird ein Client access token benötigt. Das Token wird beim Start des Rasa-Servers übergeben.
+        Das gleiche Token muss unten als Client access token eingetragen werden. Er wird lokal im Browser gesetzt und ausschließlich an den Rasa-Server übermittelt.
       </p>
     </div>
   </div>
@@ -46,7 +46,7 @@
         <div class="col col-lg-9">
         </div>
         <div class="col col-lg-1">
-            <button type="submit" class="btn btn-success" i18n="@@GoogleCredentialsButton">Speichern</button>
+            <button type="submit" class="btn btn-success" i18n="@@RasaCredentialsButton">Speichern</button>
         </div>
     </div>
   </form>

@@ -47,6 +47,15 @@
         <div class="col-3">
             <div class="card">
                 <div class="card-body">
+                    <h5 class="card-title">Rasa Cloud</h5>
+                    <p class="card-text" i18n="@@CloudRasaInfo"> Der Cloud-Dienst umfasst eine zusätzliche NLU. Hier können Credentials für Rasa eingetragen werden.</p>
+                    <a class="btn btn-primary" [routerLink]="['/rasa']" i18n="@@CloudRasaButton">Eintragen</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
                     <h5 class="card-title">Nuance Mix</h5>
                     <p class="card-text" i18n="@@CloudNuanceInfo"> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials von Nuance Mix eingetragen werden.</p>
                     <a class="btn btn-primary" [routerLink]="['/nuance']" i18n="@@CloudNuanceButton">Eintragen</a>

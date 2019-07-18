@@ -8,5 +8,6 @@ export const environment = {
   amazon: false,
   google: false,
   microsoft: false,
+  rasa: false,
   nuance: false
 };

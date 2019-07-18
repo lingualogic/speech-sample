@@ -357,6 +357,22 @@
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="CloudRasaInfo" datatype="html">
+        <source> Der Cloud-Dienst umfasst eine zusätzliche NLU. Hier können Credentials für Rasa eingetragen werden.</source>
+        <target> The cloud service includes an additional NLU. Credentials for Rasa can be entered here.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudRasaButton" datatype="html">
+        <source>Eintragen</source>
+        <target>Enter</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="NuanceInfo" datatype="html">
         <source>Die Nuance Communications ist einer der führenden Anbieter von Sprachlösungen weltweit.
            Nuance Mix ist ihr Cloud-Service.
@@ -550,11 +566,11 @@
         <source> Zur Nutzung von Sprachdiensten in Microsoft Azure müssen Speech Ressourcen angelegt werden.
         Eine Anleitung zur Erstellung findet sich <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/> hier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
         Die Region und der Subscription Key können dann unten eingetragen werden. Sie werden lokal im Browser gesetzt und ausschließlich an Microsoft übermittelt.
-      </source>
-      <target> To use speech services in Microsoft Azure, Speech Resources must be created.
-        An instruction for the creation can be found <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/> here<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
-        The region and subscription key can then be entered below. They are set locally in the browser and transmitted exclusively to Microsoft.
-      </target>
+        </source>
+        <target> To use speech services in Microsoft Azure, Speech Resources must be created.
+          An instruction for the creation can be found <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/> here<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+          The region and subscription key can then be entered below. They are set locally in the browser and transmitted exclusively to Microsoft.
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/microsoft/microsoft.component.html</context>
           <context context-type="linenumber">19</context>
@@ -566,6 +582,62 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/microsoft/microsoft.component.html</context>
           <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaInfo" datatype="html">
+        <source>
+          Der Rasa Cloud-Dienst ist ein Assistent-Service, der mit Hilfe Deep Learning-Technologien Sprache versteht 
+          und zu Sätzen die passenden Intents zurückgibt.          
+          Er erweitert Intentservice um eine zusätzliche NLU, die zur Sprachanalyse genutzt werden kann.
+          Die Nutzung des Cloud-Serices setzt einen aktiven Rasa-Server voraus.
+        </source>
+        <target>
+          The Rasa Cloud Service is an assistant service that understands language using deep learning technologies
+          and return the sentences matching intents.
+          It adds an additional NLU to Intentservice, which can be used for speech analysis.
+          Using the cloud service requires an active Rasa server.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaButton" datatype="html">
+        <source>zur Rasa-Seite</source>
+        <target>Rasa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaCredentialsHead" datatype="html">
+        <source>Credentials setzen:</source>
+        <target>Set credentials:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaCredentialsInfo" datatype="html">
+        <source> 
+          Zur Nutzung von Rasa wird ein Client access token benötigt. Das Token wird beim Start des Rasa-Servers übergeben.
+          Das gleiche Token muss unten als Client access token eingetragen werden. Es wird lokal im Browser gesetzt und ausschließlich an den Rasa-Server übermittelt.
+        </source>
+        <target>  
+          To use Rasa a client access token is needed. The token is passed when the Rasa server starts.
+          The same token must be entered below as client access token. It is set locally in the browser and transmitted exclusively to the Rasa server.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaCredentialsButton" datatype="html">
+        <source>Speichern</source>
+        <target>Save</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="IntentEditorInfo" datatype="html">

@@ -14,6 +14,7 @@ import { NuanceComponent} from './nuance/nuance.component';
 import { AmazonComponent } from './amazon/amazon.component';
 import { GoogleComponent } from './google/google.component';
 import { MicrosoftComponent } from './microsoft/microsoft.component';
+import { RasaComponent } from './rasa/rasa.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'nuance', component: NuanceComponent },
   { path: 'amazon', component: AmazonComponent },
   { path: 'google', component: GoogleComponent },
-  { path: 'microsoft', component: MicrosoftComponent }
+  { path: 'microsoft', component: MicrosoftComponent },
+  { path: 'rasa', component: RasaComponent }
 ];
 
 

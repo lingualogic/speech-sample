@@ -215,7 +215,7 @@
               </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/voice-editor/voice-editor.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="VoiceEditorVoice" datatype="html">
@@ -224,7 +224,7 @@
                 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/voice-editor/voice-editor.component.html</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ListenEditorInfo" datatype="html">
@@ -311,18 +311,32 @@
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="CloudRasaInfo" datatype="html">
+        <source> Der Cloud-Dienst umfasst eine zusätzliche NLU. Hier können Credentials für Rasa eingetragen werden.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CloudRasaButton" datatype="html">
+        <source>Eintragen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/cloud/cloud.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="CloudNuanceInfo" datatype="html">
         <source> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials von Nuance Mix eingetragen werden.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cloud/cloud.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CloudNuanceButton" datatype="html">
         <source>Eintragen</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cloud/cloud.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NuanceInfo" datatype="html">
@@ -441,7 +455,7 @@
       </trans-unit>
       <trans-unit id="GoogleCredentialsInfo" datatype="html">
         <source> Zur Nutzung von Dialogflow wird ein Client access token benötigt. Er kann in den Setting des Dialogflow Assistenten im Tab General unter API Keys eingesehen werden.
-        Der Key muss unten eingetragen werden. Er wird local im Browser gesetzt und ausschließlich an Google Dialogflow übermittelt.
+        Der Key muss unten eingetragen werden. Er wird lokal im Browser gesetzt und ausschließlich an Google Dialogflow übermittelt.
       </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/google/google.component.html</context>
@@ -496,20 +510,62 @@
           <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="RasaInfo" datatype="html">
+        <source>
+          Der Rasa Cloud-Dienst ist ein Assistent-Service, der mit Hilfe Deep Learning-Technologien Sprache versteht 
+          und zu Sätzen die passenden Intents zurückgibt.
+          Er erweitert Intentservice um eine zusätzliche NLU, die zur Sprachanalyse genutzt werden kann.
+          Die Nutzung des Cloud-Serices setzt einen aktiven Rasa-Server voraus.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaButton" datatype="html">
+        <source>zur Rasa-Seite</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaCredentialsHead" datatype="html">
+        <source>Credentials setzen:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaCredentialsInfo" datatype="html">
+        <source> Zur Nutzung von Rasa wird ein Client access token benötigt. Das Token wird beim Start des Rasa-Servers übergeben.
+        Das gleiche Token muss unten als Client access token eingetragen werden. Er wird lokal im Browser gesetzt und ausschließlich an den Rasa-Server übermittelt.
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RasaCredentialsButton" datatype="html">
+        <source>Speichern</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/rasa/rasa.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="IntentEditorLanguage" datatype="html">
         <source>
               Sprache:
             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/intent-editor/intent-editor.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="IntentEditorHint" datatype="html">
         <source> <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hinweis:<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> Die Auswahl der Sprache hängt von dem hinterlegten Nuance Mix Model ab.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/intent-editor/intent-editor.component.html</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
     </body>

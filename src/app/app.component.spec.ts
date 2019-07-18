@@ -27,6 +27,7 @@ import { AmazonComponent } from './amazon/amazon.component';
 import { NuanceComponent } from './nuance/nuance.component';
 import { GoogleComponent } from './google/google.component';
 import { MicrosoftComponent } from './microsoft/microsoft.component';
+import { RasaComponent } from './rasa/rasa.component';
 import { IntentEditorComponent } from './intent-editor/intent-editor.component';
 import { IntentDialogflowComponent } from './intent-dialogflow/intent-dialogflow.component';
 import { IntentMixnluComponent } from './intent-mixnlu/intent-mixnlu.component';
@@ -58,6 +59,7 @@ describe('AppComponent', () => {
         NuanceComponent,
         GoogleComponent,
         MicrosoftComponent,
+        RasaComponent,
         IntentEditorComponent,
         IntentDialogflowComponent,
         IntentMixnluComponent
