@@ -586,8 +586,8 @@
       </trans-unit>
       <trans-unit id="RasaInfo" datatype="html">
         <source>
-          Der Rasa Cloud-Dienst ist ein Assistent-Service, der mit Hilfe Deep Learning-Technologien Sprache versteht 
-          und zu Sätzen die passenden Intents zurückgibt.          
+          Der Rasa Cloud-Dienst ist ein Assistent-Service, der mit Hilfe Deep Learning-Technologien Sprache versteht
+          und zu Sätzen die passenden Intents zurückgibt.
           Er erweitert Intentservice um eine zusätzliche NLU, die zur Sprachanalyse genutzt werden kann.
           Die Nutzung des Cloud-Serices setzt einen aktiven Rasa-Server voraus.
         </source>
@@ -619,12 +619,11 @@
         </context-group>
       </trans-unit>
       <trans-unit id="RasaCredentialsInfo" datatype="html">
-        <source> 
-          Zur Nutzung von Rasa wird ein Client access token benötigt. Das Token wird beim Start des Rasa-Servers übergeben.
-          Das gleiche Token muss unten als Client access token eingetragen werden. Es wird lokal im Browser gesetzt und ausschließlich an den Rasa-Server übermittelt.
-        </source>
-        <target>  
-          To use Rasa a client access token is needed. The token is passed when the Rasa server starts.
+        <source> Zur Nutzung von Rasa wird ein <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Client access token<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> benötigt. Das Token wird beim Start des Rasa-Servers übergeben.
+        Das gleiche Token muss unten als Client access token eingetragen werden. Er wird lokal im Browser gesetzt und ausschließlich an den Rasa-Server übermittelt.
+      </source>
+        <target>
+          To use Rasa a <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>client access token<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>  is needed. The token is passed when the Rasa server starts.
           The same token must be entered below as client access token. It is set locally in the browser and transmitted exclusively to the Rasa server.
         </target>
         <context-group purpose="location">

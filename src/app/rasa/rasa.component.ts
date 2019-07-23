@@ -9,6 +9,7 @@ import { RasaService } from 'speech-angular';
 })
 export class RasaComponent implements OnInit {
 
+    serverUrl: string;
     appKey: string;
 
     constructor(private rasaService: RasaService) { }
@@ -17,8 +18,8 @@ export class RasaComponent implements OnInit {
     }
 
     onSubmit() {
-        console.log( this.appKey );
-        if ( this.rasaService.setCredentials( this.appKey ) !== 0 ) {
+        // console.log( this.appKey );
+        if ( this.rasaService.setCredentials( this.appKey, this.serverUrl ) !== 0 ) {
             console.log('Konfiguration konnte nicht eingetragen werden');
         }
     }

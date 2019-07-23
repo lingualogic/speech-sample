@@ -61,6 +61,7 @@ import {
 } from 'speech-angular';
 import { IntentMixnluComponent } from './intent-mixnlu/intent-mixnlu.component';
 import { IntentDialogflowComponent } from './intent-dialogflow/intent-dialogflow.component';
+import { IntentRasaNluComponent } from './intent-rasa-nlu/intent-rasa-nlu.component';
 
 
 const localeID = 'de';
@@ -95,7 +96,8 @@ const localeID = 'de';
         RasaComponent,
         IntentEditorComponent,
         IntentMixnluComponent,
-        IntentDialogflowComponent
+        IntentDialogflowComponent,
+        IntentRasaNluComponent
     ],
     imports: [
         BrowserModule,

@@ -8,6 +8,7 @@ import { IntentComponent } from './intent.component';
 import { IntentEditorComponent } from './../intent-editor/intent-editor.component';
 import { IntentDialogflowComponent } from './../intent-dialogflow/intent-dialogflow.component';
 import { IntentMixnluComponent } from './../intent-mixnlu/intent-mixnlu.component';
+import { IntentRasaNluComponent } from './../intent-rasa-nlu/intent-rasa-nlu.component';
 import { VoiceEditorComponent } from './../voice-editor/voice-editor.component';
 import { NavbarComponent } from './../navbar/navbar.component';
 
@@ -24,6 +25,7 @@ describe('IntentComponent', () => {
                 IntentEditorComponent,
                 IntentDialogflowComponent,
                 IntentMixnluComponent,
+                IntentRasaNluComponent,
                 NavbarComponent
             ],
             imports: [

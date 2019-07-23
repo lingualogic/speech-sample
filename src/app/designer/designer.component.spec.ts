@@ -25,6 +25,7 @@ import { NavbarComponent } from './../navbar/navbar.component';
 import { IntentEditorComponent } from './../intent-editor/intent-editor.component';
 import { IntentDialogflowComponent } from './../intent-dialogflow/intent-dialogflow.component';
 import { IntentMixnluComponent } from './../intent-mixnlu/intent-mixnlu.component';
+import { IntentRasaNluComponent } from './../intent-rasa-nlu/intent-rasa-nlu.component';
 
 
 describe('DesignerComponent', () => {
@@ -52,7 +53,8 @@ describe('DesignerComponent', () => {
         NavbarComponent,
         IntentEditorComponent,
         IntentDialogflowComponent,
-        IntentMixnluComponent
+        IntentMixnluComponent,
+        IntentRasaNluComponent
       ],
       imports: [
         RouterTestingModule,

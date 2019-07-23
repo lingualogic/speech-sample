@@ -51,7 +51,7 @@
         <source>Senden</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/intent/intent.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="SpeakEditorHead" datatype="html">
@@ -512,7 +512,7 @@
       </trans-unit>
       <trans-unit id="RasaInfo" datatype="html">
         <source>
-          Der Rasa Cloud-Dienst ist ein Assistent-Service, der mit Hilfe Deep Learning-Technologien Sprache versteht 
+          Der Rasa Cloud-Dienst ist ein Assistent-Service, der mit Hilfe Deep Learning-Technologien Sprache versteht
           und zu Sätzen die passenden Intents zurückgibt.
           Er erweitert Intentservice um eine zusätzliche NLU, die zur Sprachanalyse genutzt werden kann.
           Die Nutzung des Cloud-Serices setzt einen aktiven Rasa-Server voraus.
@@ -537,7 +537,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="RasaCredentialsInfo" datatype="html">
-        <source> Zur Nutzung von Rasa wird ein Client access token benötigt. Das Token wird beim Start des Rasa-Servers übergeben.
+        <source> Zur Nutzung von Rasa wird ein <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Client access token<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> benötigt. Das Token wird beim Start des Rasa-Servers übergeben.
         Das gleiche Token muss unten als Client access token eingetragen werden. Er wird lokal im Browser gesetzt und ausschließlich an den Rasa-Server übermittelt.
       </source>
         <context-group purpose="location">

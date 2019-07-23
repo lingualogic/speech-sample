@@ -149,6 +149,7 @@ module.exports = ({ gulp, credentialsDir }) => {
                 .pipe(inject.append( " */\n" ))
                 .pipe(inject.append( "\n" ))
                 .pipe(inject.append( "\n" ))
+                .pipe(inject.append( "export const RASA_SERVER_URL = '';\n" ))
                 .pipe(inject.append( "export const RASA_APP_KEY = '';\n" ))
                 .pipe( gulp.dest(  credentialsDir ));
         }

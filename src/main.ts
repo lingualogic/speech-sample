@@ -48,10 +48,11 @@ const microsoftOption = {
 // Rasa-Credentials
 
 // TODO: Hier muessen die echten Zugangsdaten eingetragen werden
-import { RASA_APP_KEY } from './../credentials/rasa-credentials';
+import { RASA_SERVER_URL, RASA_APP_KEY } from './../credentials/rasa-credentials';
 const rasaOption = {
     rasaDynamicCredentialsFlag: true,
     rasaAppKey: RASA_APP_KEY,
+    rasaServiceUrl: RASA_SERVER_URL,
     errorOutputFlag: true
 };
 

@@ -38,6 +38,9 @@
       <div *ngIf="getNlu() =='NLUNuance'">
         <app-intent-mixnlu [intent]=intent [conceptList]=conceptList></app-intent-mixnlu>
       </div>
+      <div *ngIf="getNlu() =='NLURasa'">
+        <app-intent-rasa-nlu [intent]=intent [conceptList]=conceptList></app-intent-rasa-nlu>
+      </div>
   </div>
   <hr>
   <br>
