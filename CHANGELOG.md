@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.13.0014 Alpha (10.08.2019)
+
+### Fix
+
+kleinere Korrekturen
+
+
 ## 0.5.13.0013 Alpha (18.07.2019)
 
 ### Features
