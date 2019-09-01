@@ -24,6 +24,7 @@ export class IntentEditorComponent implements OnInit {
 
   ngOnInit() {
     this.language = this.localeService.localeId;
+    this.intentService.setNLU('NLUMicrosoft');
     this.setLanguage();
     this.nlu = this.intentService.nlu;
   }

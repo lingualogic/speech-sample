@@ -26,6 +26,7 @@ import { IntentEditorComponent } from './../intent-editor/intent-editor.componen
 import { IntentDialogflowComponent } from './../intent-dialogflow/intent-dialogflow.component';
 import { IntentMixnluComponent } from './../intent-mixnlu/intent-mixnlu.component';
 import { IntentRasaNluComponent } from './../intent-rasa-nlu/intent-rasa-nlu.component';
+import { IntentMicrosoftComponent } from './../intent-microsoft/intent-microsoft.component';
 
 
 describe('DesignerComponent', () => {
@@ -54,7 +55,8 @@ describe('DesignerComponent', () => {
         IntentEditorComponent,
         IntentDialogflowComponent,
         IntentMixnluComponent,
-        IntentRasaNluComponent
+        IntentRasaNluComponent,
+        IntentMicrosoftComponent
       ],
       imports: [
         RouterTestingModule,

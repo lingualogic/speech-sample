@@ -41,6 +41,9 @@
       <div *ngIf="getNlu() =='NLURasa'">
         <app-intent-rasa-nlu [intent]=intent [conceptList]=conceptList></app-intent-rasa-nlu>
       </div>
+      <div *ngIf="getNlu() =='NLUMicrosoft'">
+        <app-intent-microsoft [intent]=intent [conceptList]=conceptList></app-intent-microsoft>
+      </div>
   </div>
   <hr>
   <br>

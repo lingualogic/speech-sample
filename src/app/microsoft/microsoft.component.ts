@@ -11,6 +11,7 @@ export class MicrosoftComponent implements OnInit {
 
     region: string;
     subscriptionKey: string;
+    luisEndpoint: string;
 
     constructor(private microsoftService: MicrosoftService) { }
 
@@ -19,7 +20,7 @@ export class MicrosoftComponent implements OnInit {
 
     onSubmit() {
         console.log(this.region, this.subscriptionKey);
-        if ( this.microsoftService.setCredentials( this.region, this.subscriptionKey ) !== 0 ) {
+        if ( this.microsoftService.setCredentials( this.region, this.subscriptionKey, this.luisEndpoint ) !== 0 ) {
             console.log('Konfiguration konnte nicht eingetragen werden');
         }
     }
