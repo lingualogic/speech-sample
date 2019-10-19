@@ -25,10 +25,12 @@ const amazonOption = {
 // Google-Credentials
 
 // TODO: Hier muessen die echten Zugangsdaten eingetragen werden
-import { GOOGLE_APP_KEY } from './../credentials/google-credentials';
+import { GOOGLE_APP_KEY, DIALOGFLOW_TOKENSERVER_URL, DIALOGFLOW_PROJECT_ID } from './../credentials/google-credentials';
 const googleOption = {
     googleDynamicCredentialsFlag: true,
     googleAppKey: GOOGLE_APP_KEY,
+    dialogflowTokenServerUrl: DIALOGFLOW_TOKENSERVER_URL,
+    dialogflowProjectId: DIALOGFLOW_PROJECT_ID,
     errorOutputFlag: true
 };
 

@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.15.0016 Beta (19.10.2019)
+
+### Features
+
+* **Google:** Erweiterung der Google-Komponente um Dialogflow Version 2.
+
+
 ## 0.5.14.0015 Beta (31.08.2019)
 
 ### Features

@@ -43,6 +43,42 @@
       </div>
     </div>
     <div class="form-row">
+      <div class="col col-lg-10" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                    id="inputGroup-sizing-default">
+                    Dialogflow Tokenserver URL:
+              </span>
+            </div>
+            <input [(ngModel)]="dialogflowTokenServerUrl"
+                   [ngModelOptions]="{standalone: true}"
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="{{dialogflowTokenServerUrl}}"/>
+          </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col col-lg-10" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                    id="inputGroup-sizing-default">
+                    Dialogflow Project-ID:
+              </span>
+            </div>
+            <input [(ngModel)]="dialogflowProjectId"
+                   [ngModelOptions]="{standalone: true}"
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="{{dialogflowProjectId}}"/>
+          </div>
+      </div>
+    </div>
+    <div class="form-row">
         <div class="col col-lg-9">
         </div>
         <div class="col col-lg-1">
