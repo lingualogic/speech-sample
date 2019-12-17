@@ -48,6 +48,24 @@
             <div class="input-group-prepend">
               <span class="input-group-text"
                     id="inputGroup-sizing-default">
+                    Google Server URL:
+              </span>
+            </div>
+            <input [(ngModel)]="googleServerUrl"
+                   [ngModelOptions]="{standalone: true}"
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="{{googleServerUrl}}"/>
+          </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col col-lg-10" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                    id="inputGroup-sizing-default">
                     Dialogflow Tokenserver URL:
               </span>
             </div>

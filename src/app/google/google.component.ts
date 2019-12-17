@@ -10,6 +10,7 @@ import { GoogleService } from 'speech-angular';
 export class GoogleComponent implements OnInit {
 
     appKey: string;
+    googleServerUrl: string;
     dialogflowTokenServerUrl: string;
     dialogflowProjectId: string;
 
@@ -20,7 +21,8 @@ export class GoogleComponent implements OnInit {
 
     onSubmit() {
         console.log( this.appKey );
-        if ( this.googleService.setCredentials( this.appKey, this.dialogflowTokenServerUrl, this.dialogflowProjectId ) !== 0 ) {
+        // tslint:disable-next-line: max-line-length
+        if ( this.googleService.setCredentials( this.appKey, this.googleServerUrl, this.dialogflowTokenServerUrl, this.dialogflowProjectId ) !== 0 ) {
             console.log('Konfiguration konnte nicht eingetragen werden');
         }
     }

@@ -5,9 +5,7 @@ Das Speech-Sample ist eine Beispielanwendung in [Angular](https://angular.io/), 
 
 ## Letzte Version
 
-* 0.5.15.0016 Beta vom 19.10.2019 [Release Notizen](./CHANGELOG.md)
-
-Speech-Angular ist noch in einem frühen Entwicklungsstadium und sollte noch nicht für den produktiven Einsatz verwendet werden.
+* 0.5.16.0017 Beta vom 17.12.2019 [Release Notizen](./CHANGELOG.md)
 
 
 ## Voraussetzungen
@@ -42,13 +40,15 @@ Dieses Projekt wurde mit dem [Angular CLI](https://github.com/angular/angular-cl
 Bitte installieren, falls nicht vorhanden:
 
 	$ npm install -g @angular/cli
-	
+
+
 ## Installation
 
 Zuerst muss das Speech-Sample Github-Repsitory unter [https://github.com/lingualogic/speech-sample](https://github.com/lingualogic/speech-sample) mit folgendem Befehl geklont werden:
 
     $ git clone https://github.com/lingualogic/speech-sample
     $ cd speech-sample
+    $ git checkout 0.5.x
 
 danach werden alle NPM-Pakete für Speech-Sample mit folgendem Befehl installiert:
 
@@ -62,6 +62,7 @@ Das Beispiel kann mit `npm start` oder mit dem Angular CLI Befehl `ng serve` ges
 	$ ng serve 
 	
 Anschließend kann es in Chrome unter `http://localhost:4200/` geöffnet werden.
+
 
 ## Internationalisierung
 
@@ -132,7 +133,7 @@ Sprachaus- und eingaben können einzeln erweitert werden.
 Das beispielhafte VUI Szenario greift auf die Funktionalität des Show-Buttons zurück und erklärt mit Hilfe des Bots, wo sich die Hometaste bei einem Tablet befindet. Zur Entwicklung eines eigenen Szenarios können an dieser Stelle weitere Komponenten entwickelt und über Sprache steuerbar gemacht werden.
 
 
-## Feedback und Fragen 
+## Feedback und Fragen
 
 Für Feedback und Fragen steht das LinguaLogic Team zur Verfügung: 
 

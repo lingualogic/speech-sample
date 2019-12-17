@@ -1,6 +1,13 @@
 # Speech-Sample App Release Notizen
 
 
+## 0.5.16.0017 Beta (17.12.2019)
+
+### Features
+
+* **Google:** Erweiterung der Google-Komponente um TTS mit Verbindung zum Google Token-Server.
+
+
 ## 0.5.15.0016 Beta (19.10.2019)
 
 ### Features
