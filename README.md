@@ -5,7 +5,7 @@ Das Speech-Sample ist eine Beispielanwendung in [Angular](https://angular.io/), 
 
 ## Letzte Version
 
-* 0.5.16.0017 Beta vom 17.12.2019 [Release Notizen](./CHANGELOG.md)
+* 0.5.17.0018 Release vom 16.02.2020 [Release Notizen](./CHANGELOG.md)
 
 
 ## Voraussetzungen
@@ -48,7 +48,6 @@ Zuerst muss das Speech-Sample Github-Repsitory unter [https://github.com/lingual
 
     $ git clone https://github.com/lingualogic/speech-sample
     $ cd speech-sample
-    $ git checkout 0.5.x
 
 danach werden alle NPM-Pakete für Speech-Sample mit folgendem Befehl installiert:
 
