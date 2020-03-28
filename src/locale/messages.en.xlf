@@ -342,8 +342,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CloudGoogleInfo" datatype="html">
-        <source> Der Cloud-Dienst umfasst eine zusätzliche NLU. Hier können Credentials für Dialogflow eingetragen werden.</source>
-        <target> The cloud service includes an additional NLU. Credentials for Google Dialogflow can be entered here.</target>
+        <source> Der Cloud-Dienst umfasst TTS, ASR und NLU. Hier können Credentials für Dialogflow und die Google Cloud eingetragen werden.</source>
+        <target> The cloud service includes TTS, ASR and NLU. Credentials for Dialogflow and Google Cloud can be entered here.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cloud/cloud.component.html</context>
           <context context-type="linenumber">42</context>
@@ -504,6 +504,30 @@
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="GoogleInfo2" datatype="html">
+        <source>
+          Die Google Cloud bietet darüber hinaus Dienste für Spracherkennung und Sprachsynthese an.
+          Die Cloud Speech-to-Text API erweitert den Listenservice um eine ASR. Die Cloud Text-to-Speech API erweitert den Speakservice um eine TTS mit weiteren Stimmen.
+          Die Aktivierung der APIs sowie die Verwaltung der Zugriffsrechte kann in der Google Cloud Konsole vorgenommen werden.
+        </source>
+        <target>
+        The Google Cloud additionally offers services for speech recognition and speech synthesis.
+        The Cloud Speech-to-Text API extends the listenservice with an ASR. The Cloud Text-to-Speech API extends the speakservice with a TTS with additional voices.
+        The activation of the APIs and the credentials can be managed in the Google Cloud Console.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/google/google.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="GoogleButton2" datatype="html">
+        <source>zur Konsole</source>
+        <target>to console</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/google/google.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="GoogleCredentialsHead" datatype="html">
         <source>Credentials setzen:</source>
         <target>Set credentials:</target>
@@ -513,11 +537,21 @@
         </context-group>
       </trans-unit>
       <trans-unit id="GoogleCredentialsInfo" datatype="html">
-        <source> Zur Nutzung von Dialogflow wird ein Client access token benötigt. Er kann in den Setting des Dialogflow Assistenten im Tab General unter API Keys eingesehen werden.
-        Der Key muss unten eingetragen werden. Er wird local im Browser gesetzt und ausschließlich an Google Dialogflow übermittelt.
-        </source>
-        <target> A client access token is required to use Dialogflow. It can be viewed in the Setting of the Dialogflow Assistant in the tab General under API Keys.
-        The key must be entered below. It is set locally in the browser and transmitted exclusively to Google Dialogflow.
+         <source> Zur Nutzung der Cloud Dienste wird ein client access token benötigt.
+        Der Token wird serverseitig oder via FaaS erzeugt. Ein Beispiel für einen Server bildet der <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Speech-Tokenserver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+        Die URL für des Servers wird abhängig von der Nutzung für Dialogflow oder ASR und TTS gesetzt.
+        Für Dialogflow wird darüberhinaus die Project ID angegeben. Eine Verbindung zu Dialogflow kann auch über den App Key hergestellt werden. (deprecated)
+        Der App Key kann in den Setting des Dialogflow Assistenten im Tab General unter API Keys eingesehen werden.
+
+        Die jeweilig benötigten Werte müssen unten eingetragen werden.
+      </source>
+        <target>
+        To use the cloud services a client access token is required.
+        The token can be generated on the server side or via FaaS. An example of a server is the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Speech-Tokenserver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+        The URL for the server is set, depending on the use for Dialogflow or ASR and TTS.
+        For Dialogflow, the project ID is also needed. A connection to Dialogflow can alternatively  be made using the App Key. (deprecated)
+        The App Key can be viewed in the Settings of the Dialogflow project.
+        The required values must be entered below.
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/google/google.component.html</context>

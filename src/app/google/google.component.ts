@@ -17,6 +17,7 @@ export class GoogleComponent implements OnInit {
     constructor(private googleService: GoogleService) { }
 
     ngOnInit() {
+      this.appKey = ' ';
     }
 
     onSubmit() {
