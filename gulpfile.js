@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const path = require('path');
 const childProcess = require('child_process');
 const shell = require('gulp-shell');
-const runSequence = require('run-sequence');
+const runSequence = require('gulp4-run-sequence');
 
 
 // Verzeichnis-Konstanten

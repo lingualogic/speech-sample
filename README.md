@@ -5,7 +5,7 @@ Das Speech-Sample ist eine Beispielanwendung in [Angular](https://angular.io/), 
 
 ## Letzte Version
 
-* 0.5.19.0020 Release vom 11.04.2020 [Release Notizen](./CHANGELOG.md)
+* 0.5.20.0021 Release vom 17.05.2020 [Release Notizen](./CHANGELOG.md)
 
 
 ## Voraussetzungen
@@ -34,7 +34,7 @@ Will man den Nuance-Clouddienst verwenden, muss ein eigener Nuance-Mix Account e
 
 NodeJS muss installiert sein.
 
-- NodeJS >= 10.X (LTS-Version)
+- NodeJS >= 10.X und <= 12.X (LTS-Version)
 
 Dieses Projekt wurde mit dem [Angular CLI](https://github.com/angular/angular-cli) generiert.
 Bitte installieren, falls nicht vorhanden:

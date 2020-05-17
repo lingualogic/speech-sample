@@ -6,7 +6,7 @@
 const rimraf = require('rimraf');
 const path = require('path');
 const inject = require('gulp-inject-string');
-const runSequence = require('run-sequence');
+const runSequence = require('gulp4-run-sequence');
 
 
 module.exports = ({ gulp, exec, distDir, appDir, cordovaRootDir, cordovaAppDir, cordovaWwwDir }) => {
