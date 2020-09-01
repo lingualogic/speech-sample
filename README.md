@@ -5,7 +5,7 @@ Das Speech-Sample ist eine Beispielanwendung in [Angular](https://angular.io/), 
 
 ## Letzte Version
 
-* 0.5.21.0022 Release vom 26.06.2020 [Release Notizen](./CHANGELOG.md)
+* 0.5.22.0023 Release vom 04.08.2020 [Release Notizen](./CHANGELOG.md)
 
 
 ## Voraussetzungen

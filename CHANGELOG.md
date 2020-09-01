@@ -1,7 +1,14 @@
 # Speech-Sample App Release Notizen
 
 
-## 0.5.21.22 Release (26.06.2020)
+## 0.5.22.0023 Release (04.08.2020)
+
+### Fix
+
+Generell fehlerbereinigte Version.
+
+
+## 0.5.21.0022 Release (26.06.2020)
 
 ### Features
 
