@@ -149,7 +149,7 @@ export class AppModule {
 @NgModule({})
 export class SampleSharedModule {
 
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<SampleSharedModule> {
         return {
             ngModule: AppModule,
             providers: [

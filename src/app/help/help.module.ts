@@ -30,7 +30,7 @@ import { HelpService } from './service/help.service';
 
 export class HelpModule {
 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<HelpModule> {
     return {ngModule: HelpModule, providers: [HelpService]};
   }
 

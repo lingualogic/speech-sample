@@ -1,6 +1,14 @@
 # Speech-Sample App Release Notizen
 
 
+
+## 0.5.23.0024 Release (10.07.2021)
+
+### Fix
+
+Aktualisierung aller NPM-Packages.
+
+
 ## 0.5.22.0023 Release (04.08.2020)
 
 ### Fix
